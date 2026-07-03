@@ -473,6 +473,10 @@ body {
   font-weight: 700;
   color: #111;
 }
+.price-table .col-final,
+.price-table .col-final * {
+  white-space: nowrap;
+}
 .price-table .col-dash { color: #bbb; }
 
 /* ── 파이낸셜 할인 추가 행 ── */
@@ -528,10 +532,22 @@ body {
 .price-table th:nth-child(4) {
   text-align: center !important;
 }
-/* 할인 셀 내 span 중앙 */
+/* ── 할인 셀 내 span 중앙 */
 .price-table .col-promo span {
   display: block;
   text-align: center;
+}
+/* 기본할인 금액 표시 (PC·아이패드 전용, 모바일에서는 숨김) */
+.promo-amount {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #999;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .promo-amount { display: none; }
 }
 /* 실구매가 우측 정렬 (5번째) */
 .price-table td:nth-child(5) { text-align: right !important; }
@@ -1263,7 +1279,7 @@ body {
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 (쿠페 포함) · GLE 450 (쿠페 포함)</div>
+    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -1383,7 +1399,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>A 220 Hatch</td><td class="col-price">48,100,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">43,290,000원</td></tr>
         <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">73,160,000원</td></tr>
@@ -1403,7 +1419,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>CLA 250 4MATIC AMG Line</td><td class="col-price">63,700,000원</td><td class="col-promo">7%</td><td class="col-rent">+3%</td><td class="col-final">59,240,000원</td></tr>
         <tr><td>Mercedes-AMG CLA 45 S 4MATIC+</td><td class="col-price">90,600,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">86,070,000원</td></tr>
@@ -1422,7 +1438,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">61,490,000원</td></tr>
         <tr><td>GLB 200 d</td><td class="col-price">63,300,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">63,300,000원</td></tr>
@@ -1442,7 +1458,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>C 200 AVANTGARDE</td><td class="col-price">64,300,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">57,220,000원</td></tr>
         <tr><td>C 200 AMG Line</td><td class="col-price">67,500,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">60,070,000원</td></tr>
@@ -1480,7 +1496,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>E 200 AVANTGARDE</td><td class="col-price">76,500,000원</td><td class="col-promo">16%</td><td class="col-rent">+3%</td><td class="col-final">64,260,000원</td></tr>
         <tr><td>E 200 EXCLUSIVE</td><td class="col-price">76,600,000원</td><td class="col-promo">4%</td><td class="col-rent">+3%</td><td class="col-final">72,770,000원</td></tr>
@@ -1508,7 +1524,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>S 350 d 4MATIC</td><td class="col-price">153,600,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">138,240,000원</td></tr>
         <tr><td>S 450 4MATIC SWB</td><td class="col-price">160,600,000원</td><td class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">7%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td class="col-rent"><span style="display:block;">+3%</span><span style="display:block;font-size:10px;font-weight:500;color:#888;margin-top:2px;">(운용리스조건)</span></td><td class="col-final">147,750,000원</td></tr>
@@ -1549,7 +1565,7 @@ body {
     </div>
     
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%; margin-bottom:24px;">
-      <thead><tr><th>모델명</th><th>권장소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>S 350 d 4MATIC</td><td class="col-price">154,000,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">154,000,000원</td></tr>
         <tr><td>S 450 4MATIC</td><td class="col-price">162,400,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">162,400,000원</td></tr>
@@ -1561,7 +1577,7 @@ body {
     </table></div>
     <p style="font-size:13px; font-weight:600; color:#7ab3d4; margin:0 0 10px; padding-bottom:6px; border-bottom:1px solid rgba(91,163,204,0.3);">TEV <span style="font-size:12px; font-weight:400; color:rgba(255,255,255,0.4);">Mercedes-Maybach</span></p>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>Mercedes-Maybach S 580</td><td class="col-price">317,000,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">317,000,000원</td></tr>
         <tr><td>Mercedes-Maybach S 580 MANUFAKTUR</td><td class="col-price">336,000,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">336,000,000원</td></tr>
@@ -1580,7 +1596,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>CLE 200 Coupé AMG Line</td><td class="col-price">75,700,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">71,910,000원</td></tr>
         <tr><td>CLE 450 4MATIC Coupé AMG Line</td><td class="col-price">98,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">89,540,000원</td></tr>
@@ -1602,7 +1618,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLC 220 d 4MATIC</td><td class="col-price">81,200,000원</td><td class="col-promo">7%</td><td class="col-rent">+3%</td><td class="col-final">75,510,000원</td></tr>
         <tr><td>GLC 300 4MATIC AVANTGARDE</td><td class="col-price">81,400,000원</td><td class="col-promo">8%</td><td class="col-rent">+3%</td><td class="col-final">74,070,000원</td></tr>
@@ -1625,7 +1641,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLE 350 4MATIC</td><td class="col-price">116,600,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">104,940,000원</td></tr>
         <tr><td>GLE 300 d 4MATIC</td><td class="col-price">117,800,000원</td><td class="col-promo">8%</td><td class="col-rent">+3%</td><td class="col-final">108,370,000원</td></tr>
@@ -1649,7 +1665,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLS 450 d 4MATIC AMG Line</td><td class="col-price">152,600,000원</td><td class="col-promo">3%</td><td class="col-rent">+3%</td><td class="col-final">148,020,000원</td></tr>
         <tr><td>GLS 450 4MATIC AMG Line</td><td class="col-price">152,600,000원</td><td class="col-promo">6%</td><td class="col-rent">+3%</td><td class="col-final">143,440,000원</td></tr>
@@ -1671,7 +1687,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>G 450 d</td><td class="col-price">193,500,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">193,500,000원</td></tr>
         <tr><td>G 450 d MANUFAKTUR</td><td class="col-price">217,700,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">217,700,000원</td></tr>
@@ -1691,7 +1707,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>Mercedes-AMG SL 43</td><td class="col-price">158,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">144,320,000원</td></tr>
         <tr><td>Mercedes-AMG SL 63 4MATIC+</td><td class="col-price">248,600,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">248,600,000원</td></tr>
@@ -1712,7 +1728,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">63,000,000원</td></tr>
         <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">68,220,000원</td></tr>
@@ -1738,7 +1754,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>Mercedes-Maybach S 580</td><td class="col-price">315,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">287,190,000원</td></tr>
         <tr><td>Mercedes-Maybach S 680</td><td class="col-price">401,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">365,450,000원</td></tr>
@@ -1786,7 +1802,7 @@ body {
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 (쿠페 포함) · GLE 450 (쿠페 포함)</div>
+    <div class="finance-card-subject">대상 — GLA 250 · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC · E 350 e · E 450 · S 450 SWB · GLC 300 AV(쿠페 포함) · GLE 450 (쿠페 포함)</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -1838,7 +1854,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>A 220 Hatch</td><td class="col-price">48,100,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">43,290,000원</td></tr>
         <tr><td>Mercedes-AMG A 45 S 4MATIC+</td><td class="col-price">80,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">73,160,000원</td></tr>
@@ -1860,7 +1876,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>CLA 250 4MATIC AMG Line</td><td class="col-price">63,700,000원</td><td class="col-promo">7%</td><td class="col-rent">+3%</td><td class="col-final">59,240,000원</td></tr>
         <tr><td>Mercedes-AMG CLA 45 S 4MATIC+</td><td class="col-price">90,600,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">86,070,000원</td></tr>
@@ -1881,7 +1897,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLA 250 4MATIC AMG Line</td><td class="col-price">69,100,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">61,490,000원</td></tr>
         <tr><td>GLB 200 d</td><td class="col-price">63,300,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">63,300,000원</td></tr>
@@ -1903,7 +1919,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>C 200 AVANTGARDE</td><td class="col-price">64,300,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">57,220,000원</td></tr>
         <tr><td>C 200 AMG Line</td><td class="col-price">67,500,000원</td><td class="col-promo">11%</td><td class="col-rent">+3%</td><td class="col-final">60,070,000원</td></tr>
@@ -1940,7 +1956,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>E 200 AVANTGARDE</td><td class="col-price">76,500,000원</td><td class="col-promo">16%</td><td class="col-rent">+3%</td><td class="col-final">64,260,000원</td></tr>
         <tr><td>E 200 EXCLUSIVE</td><td class="col-price">76,600,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">72,770,000원</td></tr>
@@ -1987,7 +2003,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>S 350 d 4MATIC</td><td class="col-price">153,600,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">138,240,000원</td></tr>
         <tr><td>S 450 4MATIC SWB</td><td class="col-price">160,600,000원</td><td class="col-promo" style="text-align:center;"><span style="display:block;color:#e67e22;font-weight:700;">8%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">+4% 할부이용시</span><span style="display:block;font-size:11px;font-weight:700;color:#8e44ad;margin-top:2px;">+6% 운용리스</span></td><td class="col-rent"><span style="display:block;">+3%</span><span style="display:block;font-size:10px;font-weight:500;color:#888;margin-top:2px;">(운용리스조건)</span></td><td class="col-final">147,750,000원</td></tr>
@@ -2012,7 +2028,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>CLE 200 Coupé AMG Line</td><td class="col-price">75,700,000원</td><td class="col-promo">5%</td><td class="col-rent">+3%</td><td class="col-final">71,910,000원</td></tr>
         <tr><td>CLE 450 4MATIC Coupé AMG Line</td><td class="col-price">98,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">89,540,000원</td></tr>
@@ -2036,7 +2052,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLC 220 d 4MATIC</td><td class="col-price">81,200,000원</td><td class="col-promo">7%</td><td class="col-rent">+3%</td><td class="col-final">75,510,000원</td></tr>
         <tr><td>GLC 300 4MATIC AVANTGARDE</td><td class="col-price">81,400,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">74,070,000원</td></tr>
@@ -2061,7 +2077,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLE 350 4MATIC</td><td class="col-price">116,600,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">104,940,000원</td></tr>
         <tr><td>GLE 300 d 4MATIC</td><td class="col-price">117,800,000원</td><td class="col-promo">8%</td><td class="col-rent">+3%</td><td class="col-final">108,370,000원</td></tr>
@@ -2087,7 +2103,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>GLS 450 d 4MATIC AMG Line</td><td class="col-price">152,600,000원</td><td class="col-promo">3%</td><td class="col-rent">+3%</td><td class="col-final">148,020,000원</td></tr>
         <tr><td>GLS 450 4MATIC AMG Line</td><td class="col-price">152,600,000원</td><td class="col-promo">6%</td><td class="col-rent">+3%</td><td class="col-final">143,440,000원</td></tr>
@@ -2111,7 +2127,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>G 450 d</td><td class="col-price">193,500,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">193,500,000원</td></tr>
         <tr><td>G 450 d MANUFAKTUR</td><td class="col-price">217,700,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">217,700,000원</td></tr>
@@ -2133,7 +2149,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>Mercedes-AMG SL 43</td><td class="col-price">158,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">144,320,000원</td></tr>
         <tr><td>Mercedes-AMG SL 63 4MATIC+</td><td class="col-price">248,600,000원</td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="col-final">248,600,000원</td></tr>
@@ -2156,7 +2172,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>EQA 250 Progressive</td><td class="col-price">70,000,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">63,000,000원</td></tr>
         <tr><td>EQA 250 AMG Line</td><td class="col-price">75,800,000원</td><td class="col-promo">10%</td><td class="col-rent">+3%</td><td class="col-final">68,220,000원</td></tr>
@@ -2184,7 +2200,7 @@ body {
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="min-width:340px;width:100%;">
-      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <thead><tr><th>모델명</th><th>권장 소비자가격</th><th>기본 할인</th><th>MBF 할부이용시</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr><td>Mercedes-Maybach S 580</td><td class="col-price">315,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">287,190,000원</td></tr>
         <tr><td>Mercedes-Maybach S 680</td><td class="col-price">401,600,000원</td><td class="col-promo">9%</td><td class="col-rent">+3%</td><td class="col-final">365,450,000원</td></tr>
@@ -2329,14 +2345,24 @@ function applyFinancialDiscounts() {
     const promoText = promoCell.textContent.trim();
     const baseRate  = (promoText === '-' || !promoText) ? 0 : parseInt(promoText);
 
+    // 기본할인 금액 (PC·아이패드 전용 표시) — 단순 "N%" 텍스트 셀에만 적용
+    // (이미 커스텀 마크업이 들어간 셀은 건드리지 않음)
+    const isSimplePromo = promoCell.classList.contains('col-promo') && promoCell.children.length === 0;
+    let amountHtml = '';
+    if (isSimplePromo && baseRate > 0 && msrp) {
+      const amount = Math.round(msrp * baseRate / 100);
+      amountHtml = '<span class="promo-amount">(' + amount.toLocaleString('ko-KR') + '원)</span>';
+    }
+
     if (finRate > 0 && msrp) {
       // 파이낸셜 적용가 = 권장가 × (1 − (기본+추가)/100), 만원 절삭
       const finPrice = Math.floor(msrp * (1 - (baseRate + finRate) / 100) / 10000) * 10000;
 
-      // 기본 할인 셀: 기본% + 파이낸셜 추가% 파란 소자
+      // 기본 할인 셀: 기본% + 할인금액(PC·아이패드) + 파이낸셜 추가% 파란 소자
       const baseDisp = promoText !== '-' ? promoText : '-';
       promoCell.innerHTML =
         '<span style="display:block;">' + baseDisp + '</span>' +
+        amountHtml +
         '<span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+' + finRate + '% 벤츠파이낸셜</span>';
 
       // 실구매가 셀: 기본 실구매가 + 파이낸셜 적용가 파란 소자
@@ -2344,6 +2370,12 @@ function applyFinancialDiscounts() {
         '<span class="final-main">' + fmtNum(basePrice) + '</span>' +
         '<span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:3px;">' + fmtNum(finPrice) + '</span>';
     } else {
+      // 파이낸셜 대상이 아니어도 기본할인 금액은 PC·아이패드에서 표시
+      if (isSimplePromo && amountHtml) {
+        promoCell.innerHTML =
+          '<span style="display:block;">' + promoText + '</span>' +
+          amountHtml;
+      }
       finalCell.innerHTML = '<span class="final-main">' + fmtNum(basePrice) + '</span>';
     }
   });
@@ -2360,6 +2392,9 @@ function applyMobilePriceFormat() {
     document.querySelectorAll('.price-table th:nth-child(2)').forEach(th => {
       if (!th.dataset.modified) { th.textContent = '권장가(원)'; th.dataset.modified = '1'; }
     });
+    document.querySelectorAll('.price-table th:nth-child(4)').forEach(th => {
+      if (!th.dataset.modifiedRent) { th.textContent = '할부조건'; th.dataset.modifiedRent = '1'; }
+    });
     document.querySelectorAll('.price-table th:nth-child(5)').forEach(th => {
       if (!th.dataset.modified) { th.textContent = '실구매가'; th.dataset.modified = '1'; }
     });
@@ -2368,6 +2403,7 @@ function applyMobilePriceFormat() {
     });
   }
 }
+
 </script>
 
 </body>
