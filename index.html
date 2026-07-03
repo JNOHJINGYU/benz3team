@@ -631,7 +631,7 @@ body {
   margin-top: 8px;
 }
 
-/* ── JUNE SPOTLIGHT CARD ── */
+/* ── JULY SPOTLIGHT CARD ── */
 .june-spotlight-card {
   max-width: 860px;
   margin: 0 auto 20px;
@@ -695,6 +695,112 @@ body {
   color: #f0c040;
   white-space: nowrap;
   letter-spacing: 0.02em;
+}
+
+/* ── FINANCE RATE TABLE ── */
+.rate-table-card {
+  max-width: 860px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #0f1628 0%, #1a1a2e 50%, #0d1a30 100%);
+  border: 1px solid rgba(184,151,90,0.4);
+  border-radius: 16px;
+  padding: 32px 28px 28px;
+  text-align: center;
+}
+.rate-table-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.rate-table-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f0c040;
+  margin-bottom: 10px;
+}
+.rate-table-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  margin-bottom: 26px;
+  word-break: keep-all;
+}
+.rate-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.rate-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+}
+.rate-table th, .rate-table td {
+  padding: 16px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+.rate-table thead th {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.rate-table thead th:first-child {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+}
+.rate-table tbody th {
+  background: rgba(255,255,255,0.03);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.rate-table tbody td {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e0935a;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.rate-table tbody tr:last-child th,
+.rate-table tbody tr:last-child td { border-bottom: none; }
+.rate-table td.rate-low { color: #5fc98d; }
+.rate-table td.rate-zero {
+  background: rgba(30,90,60,0.5);
+}
+.rate-zero-pill {
+  display: inline-block;
+  background: rgba(240,192,64,0.15);
+  border: 1px solid rgba(240,192,64,0.5);
+  color: #f0c040;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+.rate-table-foot {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+  word-break: keep-all;
+}
+.rate-table-foot strong {
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
 }
 
 /* ── FOOTER ── */
@@ -772,6 +878,12 @@ body {
     .june-spotlight-title { font-size: 26px; }
     .june-spotlight-desc { font-size: 15px; }
     .june-model-badge { font-size: 14px; padding: 8px 18px; }
+    .rate-table-card { padding: 36px 40px 30px; }
+    .rate-table-title { font-size: 26px; }
+    .rate-table-sub { font-size: 14px; }
+    .rate-table th, .rate-table td { padding: 18px 14px; }
+    .rate-table thead th { font-size: 13px; }
+    .rate-table tbody th, .rate-table tbody td { font-size: 15px; }
   }
 
   /* ── 모바일 (768px 이하) 글자 작게 ── */
@@ -828,6 +940,14 @@ body {
     .june-spotlight-desc { font-size: 12px; }
     .june-model-badge { font-size: 11px; padding: 5px 12px; }
     .june-spotlight-badge { font-size: 10px; padding: 4px 10px; }
+    .rate-table-card { padding: 20px 16px 18px; }
+    .rate-table-badge { font-size: 10px; padding: 5px 12px; }
+    .rate-table-title { font-size: 17px; }
+    .rate-table-sub { font-size: 11px; }
+    .rate-table th, .rate-table td { padding: 12px 8px; }
+    .rate-table thead th { font-size: 10px; }
+    .rate-table tbody th, .rate-table tbody td { font-size: 12px; }
+    .rate-table-foot { font-size: 10px; }
   }
 
   /* ── 소형 모바일 (400px 이하) ── */
@@ -991,13 +1111,13 @@ body {
     <p class="hero-badge">Mercedes-Benz Official Dealer · Motor One</p>
     <h1 class="hero-title">가격 및 <span>프로모션</span></h1>
 
-    <p class="hero-date">2026.06 기준 / VAT 포함 / 단위: 원</p>
+    <p class="hero-date">2026.07 기준 / VAT 포함 / 단위: 원</p>
   </div>
 </div>
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#finance-section">★ 6월 베스트</a>
+  <a class="nav-tab star" href="#finance-section">★ 7월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -1017,23 +1137,25 @@ body {
 
 <!-- NOTICE -->
 <div class="notice">
-  ※ 본 페이지는 2026년 6월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며, 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
+  ※ 본 페이지는 2026년 7월 메르세데스-벤츠 코리아 공식 프로모션 기준입니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
-<!-- JUNE SPOTLIGHT 카드 -->
+<!-- JULY SPOTLIGHT 카드 -->
 <div class="june-spotlight-card">
-  <div class="june-spotlight-badge">JUNE SPOTLIGHT · 핵심 캠페인</div>
-  <div class="june-spotlight-title">메르세데스 벤츠 파이낸셜 &amp; 장기렌트 캠페인 — 이번 달의 무기</div>
+  <div class="june-spotlight-badge">JULY SPOTLIGHT · 핵심 캠페인</div>
+  <div class="june-spotlight-title">메르세데스 벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
   <div class="june-spotlight-desc">
-    6월은 메르세데스 벤츠 파이낸셜과 장기렌트 프로그램의 혜택이 강력합니다.<br>
-    아래 차종은 금융상품 이용 시 추가 혜택 적용이 가능합니다.
+    7월부터 자동차 개별소비세 탄력세율 종료(5% 정상세율 복귀)로 권장소비자가격이 소폭 상승했지만, MBM 특별 할인 대상 차종이 확대되었습니다. (Compact GLA / GLB / AMG A45S / EQA / EQB 신규 편입)<br>
+    파이낸셜·모빌리티 조인트 캠페인(MBM JC)은 지속됩니다. 아래 모델은 기본 현금할인에 더해 해당 금융상품 이용 시 +4% ~ +7%의 추가할인이 중첩 적용됩니다. 표 안에서 <span style="color:#f0c040;font-weight:600;">금색 강조</span> 표시된 항목이 해당 모델입니다.
   </div>
   <div class="june-spotlight-badges">
+    <span class="june-model-badge">GLA 250 · GLB 250 · AMG GLB35 · AMG A45 S +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
+    <span class="june-model-badge">EQA250 · EQA AMG · EQB300 · EQB AMG +4% <span style="background:#1a6aaa;color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px;vertical-align:middle;">NEW</span></span>
     <span class="june-model-badge">C 200 AV / AMG Line +4%</span>
     <span class="june-model-badge">E 200 EXCLUSIVE +7%</span>
-    <span class="june-model-badge">E 200 AMG (+RoF) +4%</span>
+    <span class="june-model-badge">E 200 AMG Line +4%</span>
     <span class="june-model-badge">E 300 EX / AMG / 140주년 +4%</span>
-    <span class="june-model-badge">S 450 SWB +4% (운용리스 최대 6%)</span>
+    <span class="june-model-badge">S 450 SWB +4%</span>
     <span class="june-model-badge">GLC 300 AV / Coupé AV +4%</span>
     <span class="june-model-badge">GLE 450 / AMG / Coupé / Coupé AMG +4%</span>
   </div>
@@ -1112,13 +1234,13 @@ body {
   </a>
 </div>
 
-<!-- ★ 6월 BEST SECTION -->
+<!-- ★ 7월 BEST SECTION -->
 <div id="tab-best" class="section active">
 
-  <!-- 6월 금융 프로그램 -->
+  <!-- 7월 금융 프로그램 -->
   <div class="finance-header" id="finance-section">
-    <div class="finance-eyebrow">2026 June · Finance Program</div>
-    <h2 class="finance-title">6월 금융 프로그램</h2>
+    <div class="finance-eyebrow">2026 July · Finance Program</div>
+    <h2 class="finance-title">7월 금융 프로그램</h2>
     <div class="finance-divider"></div>
     <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
   </div>
@@ -1183,9 +1305,70 @@ body {
 
   <div style="height:40px;"></div>
 
+  <!-- 금융 금리표 -->
+  <div class="rate-table-card">
+    <div class="rate-table-badge">Finance Rate Table</div>
+    <div class="rate-table-title">벤츠 금리표</div>
+    <div class="rate-table-sub">C 200 · E 200/300 · S 450 SWB · GLC 300 · GLE 450 · GLA/GLB · AMG A45S/GLB35 · EQA/EQB — MBM 특별 할인 대상 모델</div>
+    <div class="rate-table-wrap">
+      <table class="rate-table">
+        <thead>
+          <tr>
+            <th>할부기간↓ 선수금→</th>
+            <th>10%</th>
+            <th>20%</th>
+            <th>30%</th>
+            <th>40%</th>
+            <th>50%</th>
+            <th>65%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>24개월</th>
+            <td>4.47%</td>
+            <td>4.03%</td>
+            <td>3.45%</td>
+            <td class="rate-low">2.69%</td>
+            <td class="rate-low">1.16%</td>
+            <td class="rate-zero"><span class="rate-zero-pill">무이자</span></td>
+          </tr>
+          <tr>
+            <th>36개월</th>
+            <td>5.06%</td>
+            <td>4.76%</td>
+            <td>4.36%</td>
+            <td>3.84%</td>
+            <td class="rate-low">3.11%</td>
+            <td class="rate-low">1.19%</td>
+          </tr>
+          <tr>
+            <th>48개월</th>
+            <td>5.38%</td>
+            <td>5.15%</td>
+            <td>4.86%</td>
+            <td>4.46%</td>
+            <td class="rate-low">3.89%</td>
+            <td class="rate-low">2.43%</td>
+          </tr>
+          <tr>
+            <th>60개월</th>
+            <td>5.63%</td>
+            <td>5.44%</td>
+            <td>5.20%</td>
+            <td>4.87%</td>
+            <td class="rate-low">4.41%</td>
+            <td class="rate-low">3.22%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rate-table-foot">무이자 조건 · 선수금 65% · 24개월 → 무이자 0.00% · 중도상환수수료 <strong>0원</strong> &nbsp;&nbsp;그 외 전 구간 → 중도상환수수료 <strong>2%</strong></div>
+  </div>
+
   <!-- 차종별 가격표 -->
   <div style="text-align:center; margin-bottom:32px;">
-    <div class="finance-eyebrow">2026 June · Price List</div>
+    <div class="finance-eyebrow">2026 July · Price List</div>
     <h2 class="finance-title" style="color:#111;">차종별 가격표</h2>
     <div class="finance-divider"></div>
   </div>
@@ -1579,8 +1762,8 @@ body {
 <!-- 금융 SECTION -->
 <div id="tab-finance" class="section">
   <div class="finance-header">
-    <div class="finance-eyebrow">2026 June · Finance Program</div>
-    <h2 class="finance-title">6월 금융 프로그램</h2>
+    <div class="finance-eyebrow">2026 July · Finance Program</div>
+    <h2 class="finance-title">7월 금융 프로그램</h2>
     <div class="finance-divider"></div>
     <p class="finance-desc">할인은 그대로, 금융이 강해진 달입니다 · 산차교환보상 3년 기본 포함<br>모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</p>
   </div>
@@ -2089,7 +2272,7 @@ window.addEventListener('scroll', function() {
 </script>
 
 <script>
-// ── 6월 벤츠파이낸셜 추가 할인율 (모델명 포함 키워드 → 추가%)
+// ── 7월 벤츠파이낸셜 추가 할인율 (모델명 포함 키워드 → 추가%)
 const FIN_MAP = [
   // ── 이미지 기준 파이낸셜 추가할인 가능 차종만 ──
   // C클래스
