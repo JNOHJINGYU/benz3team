@@ -4356,7 +4356,7 @@ function purchasePriceRatio(value) {
     : [numerator, 10n ** BigInt(scale)];
 }
 
-// basic과 finance만 합산해 한 번 적용하고, 마지막에 1,000원 단위로 내린다.
+// basic과 finance만 합산해 한 번 적용하고, 최종 금액에서 10,000원 미만을 절삭한다.
 function calculatePurchasePrice(price, basic, finance) {
   if (typeof price !== 'number' || !Number.isFinite(price) || price <= 0 || price > Number.MAX_SAFE_INTEGER) {
     throw new Error('유효하지 않은 차량가격');
@@ -4375,12 +4375,12 @@ function calculatePurchasePrice(price, basic, finance) {
   var discount = b[0] * f[1] + f[0] * b[1];
   var remaining = 100n * denominator - discount;
   if (remaining < 0n) throw new Error('합산 할인율이 100%를 초과합니다');
-  // 할인 적용 결과를 정수 비율로 유지하고, 최종 단계에서만 천원 미만을 버린다.
+  // 할인 적용 결과를 정수 비율로 유지하고, 최종 금액에서만 10,000원 미만을 절삭한다.
   var finalNumerator = p[0] * remaining;
   var finalDenominator = p[1] * denominator * 100n;
   // 두 값이 음수가 아니므로 BigInt 나눗셈은 내림과 같다. 반올림 보정은 하지 않는다.
-  var wholeThousands = finalNumerator / (finalDenominator * 1000n);
-  return Number(wholeThousands * 1000n);
+  var wholeTenThousands = finalNumerator / (finalDenominator * 10000n);
+  return Number(wholeTenThousands * 10000n);
 }
 
 // data-model-id 가 붙은 모든 행(메인 가격표 + 차종별 탭 가격표)을 VEHICLE_DATA 기준으로 동시 갱신
