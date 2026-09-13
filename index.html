@@ -4375,7 +4375,12 @@ function calculatePurchasePrice(price, basic, finance) {
   var discount = b[0] * f[1] + f[0] * b[1];
   var remaining = 100n * denominator - discount;
   if (remaining < 0n) throw new Error('합산 할인율이 100%를 초과합니다');
-  return Number((p[0] * remaining / (p[1] * denominator * 100n * 1000n)) * 1000n);
+  // 할인 적용 결과를 정수 비율로 유지하고, 최종 단계에서만 천원 미만을 버린다.
+  var finalNumerator = p[0] * remaining;
+  var finalDenominator = p[1] * denominator * 100n;
+  // 두 값이 음수가 아니므로 BigInt 나눗셈은 내림과 같다. 반올림 보정은 하지 않는다.
+  var wholeThousands = finalNumerator / (finalDenominator * 1000n);
+  return Number(wholeThousands * 1000n);
 }
 
 // data-model-id 가 붙은 모든 행(메인 가격표 + 차종별 탭 가격표)을 VEHICLE_DATA 기준으로 동시 갱신
