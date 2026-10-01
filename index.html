@@ -299,7 +299,7 @@ body {
   gap: 8px;
   font-size: 19px;
   font-weight: 800;
-  color: #ffffff;
+  color: #222222;
   margin-bottom: 10px;
   word-break: keep-all;
 }
@@ -307,7 +307,7 @@ body {
 .gclass-warning-intro {
   font-size: 14px;
   font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  color: #555555;
   line-height: 1.7;
   margin-bottom: 20px;
   word-break: keep-all;
@@ -318,7 +318,7 @@ body {
   gap: 16px;
 }
 .gclass-warning-item {
-  background: rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.65);
   border: 1px solid rgba(226,124,100,0.35);
   border-radius: 12px;
   padding: 18px 20px;
@@ -332,11 +332,11 @@ body {
 .gclass-warning-item-desc {
   font-size: 13px;
   font-weight: 400;
-  color: rgba(255,255,255,0.82);
+  color: #444444;
   line-height: 1.9;
   word-break: keep-all;
 }
-.gclass-warning-item-desc strong { color: #ffffff; font-weight: 700; }
+.gclass-warning-item-desc strong { color: #c95f49; font-weight: 700; }
 @media (max-width: 768px) {
   .gclass-contract-warning { padding: 20px 18px; }
   .gclass-warning-title { font-size: 16px; }
@@ -4019,6 +4019,21 @@ body {
 
    숫자만 변경하면 전체 가격표에 자동 반영됩니다.
    ===================================================== */
+/* 장기렌트 +3% 적용 제외 모델 (공식 정책 예외)
+   - 여기에 있는 모델은 SALES_CONDITIONS의 rent가 반드시 null이어야 합니다.
+   - 그 외 모델은 rent: 3 이어야 합니다.
+   - G-Class MY26 / MY27: 2026.9부터 장기렌트 추가 조건 삭제. 월별 업데이트 시 rent: 3으로 되돌리지 마세요. */
+const RENT_EXCLUDED_MODEL_IDS = new Set([
+  'g-450-d',
+  'g-450-d-manufaktur',
+  'mercedes-amg-g-63',
+  'mercedes-amg-g-63-manufaktur',
+  'g-450-d-my27',
+  'g-450-d-manufaktur-my27',
+  'mercedes-amg-g-63-my27',
+  'mercedes-amg-g-63-manufaktur-my27'
+]);
+
 const SALES_CONDITIONS = {
   // A-Class
   "a-220-hatch": { basic: 10, finance: null, rent: 3 },
@@ -4132,16 +4147,20 @@ const SALES_CONDITIONS = {
   "gls-450-4matic-amg-line-premium": { basic: null, finance: null, rent: 3 },
   "gls-580-4matic-amg-line": { basic: 9, finance: null, rent: 3 },
   "mercedes-amg-gls-63-4matic": { basic: 1, finance: null, rent: 3 },
+  // IMPORTANT:
+  // G-Class MY26 / MY27은 장기렌트 +3% 적용 제외 (2026.9 정책 — rent: null).
+  // 월별 프로모션 일괄 업데이트 시 rent: 3으로 덮어쓰지 말 것.
+  // 예외 목록은 위 RENT_EXCLUDED_MODEL_IDS에서 관리하며, 검수 로직이 rent: 3 회귀를 경고합니다.
   // G-Class
-  "g-450-d": { basic: null, finance: null, rent: 3 },
-  "g-450-d-manufaktur": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-manufaktur": { basic: null, finance: null, rent: 3 },
+  "g-450-d": { basic: null, finance: null, rent: null },
+  "g-450-d-manufaktur": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-manufaktur": { basic: null, finance: null, rent: null },
   // G클래스 MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 MY26과 별도)
-  "g-450-d-my27": { basic: null, finance: null, rent: 3 },
-  "g-450-d-manufaktur-my27": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-my27": { basic: null, finance: null, rent: 3 },
-  "mercedes-amg-g-63-manufaktur-my27": { basic: null, finance: null, rent: 3 },
+  "g-450-d-my27": { basic: null, finance: null, rent: null },
+  "g-450-d-manufaktur-my27": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-my27": { basic: null, finance: null, rent: null },
+  "mercedes-amg-g-63-manufaktur-my27": { basic: null, finance: null, rent: null },
   // AMG
   "mercedes-amg-sl-43": { basic: 9, finance: null, rent: 3 },
   "mercedes-amg-sl-63-4matic": { basic: null, finance: null, rent: 3 },
@@ -4621,13 +4640,14 @@ function validateMBSureSupport() {
 // ③ basic/finance/rent 값이 숫자 또는 null이 아닌 경우
 // ④ 실제 가격표(.price-table tbody tr)에는 모델 행이 있는데 data-model-id가 없는 경우
 // ⑤ 가격표의 data-model-id가 VEHICLE_DATA/SALES_CONDITIONS에 없는 경우
-// ⑥ rent 값이 3이 아닌 경우 (현재 확정 조건: 전 모델 +3%)
+// ⑥ rent 정책 위반: RENT_EXCLUDED_MODEL_IDS(G-Class)는 rent === null, 그 외 모델은 rent === 3
 // 문제가 없으면 콘솔에 불필요한 로그를 남기지 않는다.
 function validateSalesConditions() {
   var missingInSales = [];
   var missingInVehicle = [];
   var invalidValues = [];
   var rentIssues = [];
+  var rentExclusionIssues = [];
 
   Object.keys(VEHICLE_DATA).forEach(function (id) {
     if (!(id in SALES_CONDITIONS)) missingInSales.push(id);
@@ -4648,7 +4668,12 @@ function validateSalesConditions() {
         invalidValues.push({ id: id, model: modelName, key: key, value: c[key] });
       }
     });
-    if (c.rent !== 3) {
+    if (RENT_EXCLUDED_MODEL_IDS.has(id)) {
+      // 장기렌트 제외 모델(G-Class)에 rent 값이 들어가면 회귀로 판단한다.
+      if (c.rent !== null) {
+        rentExclusionIssues.push({ id: id, model: modelName, value: c.rent });
+      }
+    } else if (c.rent !== 3) {
       rentIssues.push({ id: id, model: modelName, value: c.rent });
     }
   });
@@ -4684,6 +4709,16 @@ function validateSalesConditions() {
   rentIssues.forEach(function (item) {
     console.warn('[장기렌트 조건 오류]', item.model, '현재:', item.value, '정상: 3');
   });
+  rentExclusionIssues.forEach(function (item) {
+    console.warn('[G-Class rental exclusion regression detected]', item.model, '(' + item.id + ')', '현재 rent:', item.value, '정상: null — G-Class는 장기렌트 +3% 제외 대상입니다.');
+  });
+  // 예외 목록의 모델ID가 SALES_CONDITIONS에 없으면(오타·삭제) 함께 경고한다.
+  RENT_EXCLUDED_MODEL_IDS.forEach(function (id) {
+    if (!(id in SALES_CONDITIONS)) {
+      rentExclusionIssues.push({ id: id, model: id, value: undefined });
+      console.warn('[장기렌트 제외 목록 오류]', id, '— SALES_CONDITIONS에 없습니다.');
+    }
+  });
   uncoveredRows.forEach(function (name) {
     console.warn('[가격표 중앙관리 누락]', name, '— data-model-id 없음');
   });
@@ -4695,9 +4730,9 @@ function validateSalesConditions() {
   });
 
   var totalIssues = missingInSales.length + missingInVehicle.length + invalidValues.length +
-    rentIssues.length + uncoveredRows.length + idsNotInVehicle.length + idsNotInSales.length;
+    rentIssues.length + rentExclusionIssues.length + uncoveredRows.length + idsNotInVehicle.length + idsNotInSales.length;
   if (totalIssues === 0) {
-    console.log('[판매조건 검수] 이상 없음 — VEHICLE_DATA/SALES_CONDITIONS ' + Object.keys(VEHICLE_DATA).length + '개 모델 일치, 가격표 전수 매칭, rent 전부 3');
+    console.log('[판매조건 검수] 이상 없음 — VEHICLE_DATA/SALES_CONDITIONS ' + Object.keys(VEHICLE_DATA).length + '개 모델 일치, 가격표 전수 매칭, rent 정책 정상(G-Class 제외 ' + RENT_EXCLUDED_MODEL_IDS.size + '개 null · 그 외 3)');
   }
 }
 
