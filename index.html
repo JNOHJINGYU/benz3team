@@ -4445,13 +4445,13 @@ const EDITION_DETAIL_LINKS = {
   "cle-200-coup-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
   "cle-200-cabriolet-amg-line-140-edition": { url: "https://drive.google.com/file/d/1M6O3N9k3i-7RZzvoQ1FeligLnGwQ3jtI/view?usp=sharing" },
 
-  // ★ 스페셜 에디션 PDF 상세보기 — url에 PDF 주소만 입력하면 새 탭으로 열립니다.
-  //   - "https://..." 전체 주소 또는 저장소에 올린 PDF의 상대 경로(예: "pdf/c200-final-edition.pdf") 모두 가능
+  // ★ 스페셜 에디션 상세보기 — url에 PDF/이미지 주소만 입력하면 새 탭으로 열립니다.
+  //   - "https://..." 전체 주소 또는 저장소에 올린 파일의 상대 경로(예: "images/c200-final-edition.jpg") 모두 가능
   //   - url이 비어 있으면 "상세보기 준비 중"으로 비활성 표시되고 클릭되지 않습니다.
-  // C 200 Final Edition PDF
-  "c-200-final-edition": { url: "", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
-  // MY27 GLC 300 Special Edition PDF
-  "glc-300-special-edition-my27": { url: "", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
+  // C 200 Final Edition 상세 이미지
+  "c-200-final-edition": { url: "images/c200-final-edition.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
+  // MY27 GLC 300 Special Edition 상세 이미지
+  "glc-300-special-edition-my27": { url: "images/glc300-special-edition-my27.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
 };
 
 /* =====================================================
@@ -4775,9 +4775,9 @@ function applyEditionDetailLinks() {
   Object.keys(EDITION_DETAIL_LINKS).forEach(function (id) {
     var linkData = EDITION_DETAIL_LINKS[id];
     var url = linkData.url;
-    // https:// 주소 또는 저장소 내 PDF 상대 경로(.pdf)일 때만 활성화
+    // https:// 주소 또는 저장소 내 PDF·이미지 상대 경로일 때만 활성화
     var isActive = typeof url === 'string' &&
-      (url.indexOf('https://') === 0 || /^[\w\-.\/%]+\.pdf$/i.test(url));
+      (url.indexOf('https://') === 0 || /^[\w\-.\/%]+\.(pdf|jpe?g|png|webp)$/i.test(url));
 
     var rows = document.querySelectorAll('tr[data-model-id="' + id + '"]');
     rows.forEach(function (tr) {
