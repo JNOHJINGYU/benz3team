@@ -762,6 +762,14 @@ body {
   color: #102A4C;
   transform: translateX(2px);
 }
+/* GLC electric MY27 섹션 제목 옆 상세보기 (제목 줄 안 배치용) */
+.car-model-name .glc-electric-detail-link {
+  margin: 0 0 0 10px;
+  padding: 2px 4px;
+  min-height: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 .edition-detail-link.is-disabled {
   color: #999;
   pointer-events: none;
@@ -3179,7 +3187,7 @@ body {
       <div class="car-badge">GLC</div>
       <div class="car-section-info">
         <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">GLC electric <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+        <div class="car-model-name">GLC electric <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span><a class="edition-detail-link glc-electric-detail-link is-disabled" data-glc-electric-link>상세보기 준비 중</a></div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="width:100%;">
@@ -4451,12 +4459,7 @@ const EDITION_DETAIL_LINKS = {
   // C 200 Final Edition 상세 이미지
   "c-200-final-edition": { url: "images/c200-final-edition.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
   // MY27 GLC 300 Special Edition 상세 이미지
-  "glc-300-special-edition-my27": { url: "images/glc300-special-edition-my27.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
-
-  // ★ MY27 GLC electric 랜딩페이지 — 두 모델 모두 GLC_ELECTRIC_LANDING_URL 하나를 참조합니다.
-  //   (주소는 여기가 아니라 아래 GLC_ELECTRIC_LANDING_URL 변수에 입력하세요)
-  "glc-300-4matic-amg-line-electric-launch-edition-my27": { getUrl: function () { return GLC_ELECTRIC_LANDING_URL; }, label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
-  "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { getUrl: function () { return GLC_ELECTRIC_LANDING_URL; }, label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
+  "glc-300-special-edition-my27": { url: "images/glc300-special-edition-my27.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
 };
 
 /* =====================================================
@@ -4879,6 +4882,17 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   document.querySelectorAll('.maybach-detail-btn').forEach(function(btn) {
     btn.setAttribute('href', MAYBACH_LANDING_URL);
+  });
+  // GLC electric MY27 섹션 제목 옆 상세보기 — URL이 비어 있으면 비활성("준비 중") 유지
+  document.querySelectorAll('[data-glc-electric-link]').forEach(function(link) {
+    var url = GLC_ELECTRIC_LANDING_URL;
+    if (typeof url === 'string' && url.trim() !== '') {
+      link.setAttribute('href', url);
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.classList.remove('is-disabled');
+      link.textContent = '상세보기 ↗';
+    }
   });
 });
 
