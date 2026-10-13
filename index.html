@@ -4451,7 +4451,12 @@ const EDITION_DETAIL_LINKS = {
   // C 200 Final Edition 상세 이미지
   "c-200-final-edition": { url: "images/c200-final-edition.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
   // MY27 GLC 300 Special Edition 상세 이미지
-  "glc-300-special-edition-my27": { url: "images/glc300-special-edition-my27.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
+  "glc-300-special-edition-my27": { url: "images/glc300-special-edition-my27.jpg", label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
+
+  // ★ MY27 GLC electric 랜딩페이지 — 두 모델 모두 GLC_ELECTRIC_LANDING_URL 하나를 참조합니다.
+  //   (주소는 여기가 아니라 아래 GLC_ELECTRIC_LANDING_URL 변수에 입력하세요)
+  "glc-300-4matic-amg-line-electric-launch-edition-my27": { getUrl: function () { return GLC_ELECTRIC_LANDING_URL; }, label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" },
+  "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { getUrl: function () { return GLC_ELECTRIC_LANDING_URL; }, label: "상세보기 ↗", pendingLabel: "상세보기 준비 중" }
 };
 
 /* =====================================================
@@ -4774,10 +4779,11 @@ function validateSalesConditions() {
 function applyEditionDetailLinks() {
   Object.keys(EDITION_DETAIL_LINKS).forEach(function (id) {
     var linkData = EDITION_DETAIL_LINKS[id];
-    var url = linkData.url;
-    // https:// 주소 또는 저장소 내 PDF·이미지 상대 경로일 때만 활성화
+    // getUrl이 있으면 별도 변수(예: GLC_ELECTRIC_LANDING_URL)에서 주소를 읽는다.
+    var url = typeof linkData.getUrl === 'function' ? linkData.getUrl() : linkData.url;
+    // https:// 주소 또는 저장소 내 PDF·이미지·HTML 상대 경로일 때만 활성화
     var isActive = typeof url === 'string' &&
-      (url.indexOf('https://') === 0 || /^[\w\-.\/%]+\.(pdf|jpe?g|png|webp)$/i.test(url));
+      (url.indexOf('https://') === 0 || /^[\w\-.\/%]+\.(pdf|jpe?g|png|webp|html?)$/i.test(url));
 
     var rows = document.querySelectorAll('tr[data-model-id="' + id + '"]');
     rows.forEach(function (tr) {
@@ -4837,6 +4843,11 @@ var SCLASS_LANDING_URL = 's-class.html';
 
 // ★ GLC 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var GLC_LANDING_URL = 'glc-index.html';
+
+// ★ GLC electric(MY27) 전용 랜딩페이지 URL – 내연기관 GLC(GLC_LANDING_URL)와 별개입니다.
+//   주소를 입력하면 MY27 GLC electric 두 모델의 "상세보기 ↗"가 자동으로 활성화됩니다.
+//   예: 'glc-electric.html' 또는 'https://jnohjingyu.github.io/benz3team/glc-electric.html'
+var GLC_ELECTRIC_LANDING_URL = '';
 
 // ★ CLE 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var CLE_LANDING_URL = 'cle.html';
