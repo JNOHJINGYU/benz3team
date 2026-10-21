@@ -2401,7 +2401,7 @@ body {
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">E 300 4MATIC</div>
-        <div class="spotlight-compare-value"><span class="cmp-old">MY26 14%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 12%</span></div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 14%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 11%</span></div>
         <div class="spotlight-item-sub">MY27도 MBM 특별할인 +4% 적용 · 특별 저금리(MBM JC)는 MY26만</div>
       </div>
       <div class="spotlight-compare-warn"><span class="warn-strong">MY26 재고 소진 = 조건 종료.</span> 위 할인율은 남아있는 MY26 재고에만 적용되며, 재고가 빠진 사양은 MY27 조건으로 계약해야 합니다.<br><br>GLA 250 · EQA 250은 MY27도 동일 조건(13% / 14%)이라 연식 차이에 따른 손해가 없습니다.</div>
@@ -2944,10 +2944,10 @@ body {
         <tr style="background:rgba(184,151,90,0.07);">
           <td colspan="5" style="font-size:12px; font-weight:700; color:#f0c040; padding:10px 12px; letter-spacing:0.1em;">MY27</td>
         </tr>
-        <tr class="my27-row" data-model-id="e-300-4matic-exclusive-my27"><td class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">0원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
-        <tr class="my27-row" data-model-id="e-300-4matic-amg-line-my27"><td class="model-cell">E 300 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">0원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
-        <tr class="my27-row" data-model-id="e-450-4matic-exclusive-my27"><td class="model-cell">E 450 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">0원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
-        <tr class="my27-row" data-model-id="e-450-4matic-amg-line-my27"><td class="model-cell">E 450 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">0원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="e-300-4matic-exclusive-my27"><td class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">94,800,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="e-300-4matic-amg-line-my27"><td class="model-cell">E 300 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">100,100,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="e-450-4matic-exclusive-my27"><td class="model-cell">E 450 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">129,500,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="e-450-4matic-amg-line-my27"><td class="model-cell">E 450 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">117,200,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
       </tbody>
     </table>
   </div>
@@ -4115,11 +4115,11 @@ const SALES_CONDITIONS = {
   "e-450-4matic-amg-line": { basic: 11, finance: null, rent: 3 },
   "e-450-4matic-exclusive": { basic: 11, finance: null, rent: 3 },
   "mercedes-amg-e-53-hybrid-4matic": { basic: 10, finance: null, rent: 3 },
-  // E클래스 MY27 (2026년 10월 신규 판매조건 — 차량가격 미반영)
-  "e-300-4matic-exclusive-my27": { basic: 8, finance: 4, rent: 3 },
-  "e-300-4matic-amg-line-my27": { basic: 8, finance: 4, rent: 3 },
-  "e-450-4matic-exclusive-my27": { basic: 10, finance: null, rent: 3 },
-  "e-450-4matic-amg-line-my27": { basic: 10, finance: null, rent: 3 },
+  // E클래스 MY27
+  "e-300-4matic-exclusive-my27": { basic: 7, finance: 4, rent: 3 },
+  "e-300-4matic-amg-line-my27": { basic: 7, finance: 4, rent: 3 },
+  "e-450-4matic-exclusive-my27": { basic: 7, finance: 4, rent: 3 },
+  "e-450-4matic-amg-line-my27": { basic: 7, finance: 4, rent: 3 },
   "e-200-amg-line-rof-edition": { basic: 15, finance: 4, rent: 3 },
   "e-300-4matic-amg-line-140-edition": { basic: 10, finance: 4, rent: 3 },
   // S-Class
@@ -4332,11 +4332,11 @@ const VEHICLE_DATA = {
   "e-450-4matic-amg-line": { model: "E 450 4MATIC AMG Line", newPrice: 116000000 },
   "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", newPrice: 129600000 },
   "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", newPrice: 143000000 },
-  // E클래스 MY27 (차량가격 미반영 — newPrice 0 = 가격 미확정, 실구매가 계산 제외)
-  "e-300-4matic-exclusive-my27": { model: "E 300 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 0 },
-  "e-300-4matic-amg-line-my27": { model: "E 300 4MATIC AMG Line", modelYear: "MY27", newPrice: 0 },
-  "e-450-4matic-exclusive-my27": { model: "E 450 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 0 },
-  "e-450-4matic-amg-line-my27": { model: "E 450 4MATIC AMG Line", modelYear: "MY27", newPrice: 0 },
+  // E클래스 MY27
+  "e-300-4matic-exclusive-my27": { model: "E 300 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 94800000 },
+  "e-300-4matic-amg-line-my27": { model: "E 300 4MATIC AMG Line", modelYear: "MY27", newPrice: 100100000 },
+  "e-450-4matic-exclusive-my27": { model: "E 450 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 129500000 },
+  "e-450-4matic-amg-line-my27": { model: "E 450 4MATIC AMG Line", modelYear: "MY27", newPrice: 117200000 },
   "e-200-amg-line-rof-edition": { model: "E 200 AMG Line RoF Edition", newPrice: 82800000 },
   "e-300-4matic-amg-line-140-edition": { model: "E 300 4MATIC AMG Line 140주년 Edition", newPrice: 104700000 },
   // S-Class
