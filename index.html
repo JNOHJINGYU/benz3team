@@ -2278,6 +2278,7 @@ body {
   <a class="nav-tab" data-tab="gle" href="#tab-gle-price">GLE</a>
   <a class="nav-tab" data-tab="gls" href="#tab-gls-price">GLS</a>
   <a class="nav-tab" data-tab="g" href="#tab-g-price">G클래스</a>
+  <a class="nav-tab" data-tab="v" href="#tab-v-price">V-Class</a>
   <a class="nav-tab" data-tab="amg" href="#tab-amg-price">AMG GT·SL</a>
   <a class="nav-tab" data-tab="eq" href="#tab-eq-price">전동화 EQ</a>
   <a class="nav-tab" data-tab="maybach" href="#tab-maybach-price">Maybach</a>
@@ -2944,6 +2945,8 @@ body {
         <tr style="background:rgba(184,151,90,0.07);">
           <td colspan="5" style="font-size:12px; font-weight:700; color:#f0c040; padding:10px 12px; letter-spacing:0.1em;">MY27</td>
         </tr>
+        <tr class="my27-row" data-model-id="e-200-exclusive-my27"><td class="model-cell">E 200 EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">-</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="e-200-amg-line-my27"><td class="model-cell">E 200 AMG Line</td><td class="price-cell"><span class="stock-price-main">-</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
         <tr class="my27-row" data-model-id="e-300-4matic-exclusive-my27"><td class="model-cell">E 300 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">94,800,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
         <tr class="my27-row" data-model-id="e-300-4matic-amg-line-my27"><td class="model-cell">E 300 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">100,100,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
         <tr class="my27-row" data-model-id="e-450-4matic-exclusive-my27"><td class="model-cell">E 450 4MATIC EXCLUSIVE</td><td class="price-cell"><span class="stock-price-main">129,500,000원</span></td><td class="col-dash">-</td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
@@ -3323,6 +3326,23 @@ body {
   </div>
   </div>
 
+  <!-- V-Class -->
+  <div class="car-section" id="tab-v-price">
+    <div class="car-section-header">
+      <div class="car-badge">V</div>
+      <div class="car-section-info">
+        <div class="car-brand">Mercedes-Benz</div>
+        <div class="car-model-name">V-Class</div>
+      </div>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="width:100%;">
+      <thead><tr><th>모델명</th><th>차량가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
+      <tbody>
+        <tr data-model-id="v-300-d"><td class="model-cell">V 300 d</td><td class="price-cell"><span class="stock-price-main">124,000,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="purchase-cell">-</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
   <!-- AMG GT·SL -->
   <div class="car-section" id="tab-amg-price">
     <div class="car-section-header">
@@ -3446,6 +3466,7 @@ body {
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
 </div>
+
 </div>
 
 <!-- 금융 SECTION -->
@@ -4070,7 +4091,9 @@ const RENT_EXCLUDED_MODEL_IDS = new Set([
   'g-450-d-my27',
   'g-450-d-manufaktur-my27',
   'mercedes-amg-g-63-my27',
-  'mercedes-amg-g-63-manufaktur-my27'
+  'mercedes-amg-g-63-manufaktur-my27',
+  // V-Class: 장기렌트 추가할인 없음
+  'v-300-d'
 ]);
 
 const SALES_CONDITIONS = {
@@ -4116,6 +4139,8 @@ const SALES_CONDITIONS = {
   "e-450-4matic-exclusive": { basic: 11, finance: null, rent: 3 },
   "mercedes-amg-e-53-hybrid-4matic": { basic: 10, finance: null, rent: 3 },
   // E클래스 MY27 (2026년 10월 판매조건)
+  "e-200-exclusive-my27": { basic: 14, finance: 4, rent: 3 },
+  "e-200-amg-line-my27": { basic: 14, finance: 3, rent: 3 },
   "e-300-4matic-exclusive-my27": { basic: 8, finance: 4, rent: 3 },
   "e-300-4matic-amg-line-my27": { basic: 8, finance: 4, rent: 3 },
   "e-450-4matic-exclusive-my27": { basic: 10, finance: null, rent: 3 },
@@ -4239,6 +4264,8 @@ const SALES_CONDITIONS = {
   "mercedes-maybach-s-580-my27": { basic: null, finance: null, rent: 3 },
   "mercedes-maybach-s-580-manufaktur-my27": { basic: null, finance: null, rent: 3 },
   "mercedes-maybach-s-680-my27": { basic: null, finance: null, rent: 3 },
+  // V-Class (할인·장기렌트 없음 — RENT_EXCLUDED_MODEL_IDS에 등록)
+  "v-300-d": { basic: null, finance: null, rent: null },
 };
 
 /* =====================================================
@@ -4333,6 +4360,8 @@ const VEHICLE_DATA = {
   "e-450-4matic-exclusive": { model: "E 450 4MATIC EXCLUSIVE", newPrice: 129600000 },
   "mercedes-amg-e-53-hybrid-4matic": { model: "Mercedes-AMG E 53 HYBRID 4MATIC+", newPrice: 143000000 },
   // E클래스 MY27
+  "e-200-exclusive-my27": { model: "E 200 EXCLUSIVE", modelYear: "MY27", newPrice: 75500000 },
+  "e-200-amg-line-my27": { model: "E 200 AMG Line", modelYear: "MY27", newPrice: 81000000 },
   "e-300-4matic-exclusive-my27": { model: "E 300 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 94800000 },
   "e-300-4matic-amg-line-my27": { model: "E 300 4MATIC AMG Line", modelYear: "MY27", newPrice: 100100000 },
   "e-450-4matic-exclusive-my27": { model: "E 450 4MATIC EXCLUSIVE", modelYear: "MY27", newPrice: 129500000 },
@@ -4451,6 +4480,8 @@ const VEHICLE_DATA = {
   "mercedes-maybach-s-580-my27": { model: "Mercedes-Maybach S 580", modelYear: "MY27", newPrice: 317000000 },
   "mercedes-maybach-s-580-manufaktur-my27": { model: "Mercedes-Maybach S 580 MANUFAKTUR", modelYear: "MY27", newPrice: 336000000 },
   "mercedes-maybach-s-680-my27": { model: "Mercedes-Maybach S 680", modelYear: "MY27", newPrice: 407000000 },
+  // V-Class (연식 미지정)
+  "v-300-d": { model: "V 300 d", modelYear: null, newPrice: 124000000 },
 };
 
 /* =====================================================
@@ -4790,7 +4821,7 @@ function validateSalesConditions() {
   var totalIssues = missingInSales.length + missingInVehicle.length + invalidValues.length +
     rentIssues.length + rentExclusionIssues.length + uncoveredRows.length + idsNotInVehicle.length + idsNotInSales.length;
   if (totalIssues === 0) {
-    console.log('[판매조건 검수] 이상 없음 — VEHICLE_DATA/SALES_CONDITIONS ' + Object.keys(VEHICLE_DATA).length + '개 모델 일치, 가격표 전수 매칭, rent 정책 정상(G-Class 제외 ' + RENT_EXCLUDED_MODEL_IDS.size + '개 null · 그 외 3)');
+    console.log('[판매조건 검수] 이상 없음 — VEHICLE_DATA/SALES_CONDITIONS ' + Object.keys(VEHICLE_DATA).length + '개 모델 일치, 가격표 전수 매칭, rent 정책 정상(장기렌트 제외 ' + RENT_EXCLUDED_MODEL_IDS.size + '개 null · 그 외 3)');
   }
 }
 
