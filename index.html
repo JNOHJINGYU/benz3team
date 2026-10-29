@@ -2871,6 +2871,7 @@ body {
       <thead><tr><th>모델명</th><th>차량가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="my27-row" data-model-id="gla-250-4matic-amg-line-my27"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="glb-250-plus-electric-my27"><td class="model-cell">GLB 250+ Electric</td><td class="price-cell"><span class="stock-price-main">69,900,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="purchase-cell">-</td></tr>
       </tbody>
     </table></div>
     <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
@@ -3615,6 +3616,7 @@ body {
       <thead><tr><th>모델명</th><th>차량가격</th><th>기본 할인</th><th>장기렌트</th><th>실구매가</th></tr></thead>
       <tbody>
         <tr class="my27-row"><td class="model-cell">GLA 250 4MATIC AMG Line</td><td class="price-cell"><span class="stock-price-main">70,800,000원</span></td><td class="col-promo"><span style="display:block;">9%</span><span style="display:block;font-size:11px;font-weight:600;color:#2980b9;margin-top:2px;">+4% 벤츠파이낸셜</span></td><td class="col-rent">+3%</td><td class="purchase-cell">-</td></tr>
+        <tr class="my27-row" data-model-id="glb-250-plus-electric-my27"><td class="model-cell">GLB 250+ Electric</td><td class="price-cell"><span class="stock-price-main">69,900,000원</span></td><td class="col-dash">-</td><td class="col-dash">-</td><td class="purchase-cell">-</td></tr>
       </tbody>
     </table></div>
     <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
@@ -4093,7 +4095,9 @@ const RENT_EXCLUDED_MODEL_IDS = new Set([
   'mercedes-amg-g-63-my27',
   'mercedes-amg-g-63-manufaktur-my27',
   // V-Class: 장기렌트 추가할인 없음
-  'v-300-d'
+  'v-300-d',
+  // GLB 250+ Electric MY27: 장기렌트 추가할인 없음
+  'glb-250-plus-electric-my27'
 ]);
 
 const SALES_CONDITIONS = {
@@ -4120,6 +4124,8 @@ const SALES_CONDITIONS = {
   "gla-250-4matic-amg-line": { basic: 9, finance: 4, rent: 3 },
   // MY27
   "gla-250-4matic-amg-line-my27": { basic: 9, finance: 4, rent: 3 },
+  // GLB 250+ Electric MY27 — 할인·장기렌트 조건 없음 (RENT_EXCLUDED_MODEL_IDS 등록)
+  "glb-250-plus-electric-my27": { basic: null, finance: null, rent: null },
   "glb-200-d": { basic: null, finance: null, rent: 3 },
   "glb-250-4matic": { basic: 13, finance: 4, rent: 3 },
   "mercedes-amg-glb-35-4matic": { basic: 9, finance: 4, rent: 3 },
@@ -4341,6 +4347,7 @@ const VEHICLE_DATA = {
   "gla-250-4matic-amg-line": { model: "GLA 250 4MATIC AMG Line", newPrice: 70000000 },
   // MY27 신규 모델 (출시 전 — MY26과 동일 판매조건, 가격만 신규)
   "gla-250-4matic-amg-line-my27": { model: "GLA 250 4MATIC AMG Line", modelYear: "MY27", newPrice: 70800000 },
+  "glb-250-plus-electric-my27": { model: "GLB 250+ Electric", modelYear: "MY27", newPrice: 69900000 },
   "glb-200-d": { model: "GLB 200 d", newPrice: 64300000 },
   "glb-250-4matic": { model: "GLB 250 4MATIC", newPrice: 72000000 },
   "mercedes-amg-glb-35-4matic": { model: "Mercedes-AMG GLB 35 4MATIC", newPrice: 79500000 },
