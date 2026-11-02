@@ -762,6 +762,20 @@ body {
   color: #102A4C;
   transform: translateX(2px);
 }
+/* 11월 모델별 금융 조건 (접이식) */
+.nov-finance-details > summary { list-style: none; cursor: pointer; }
+.nov-finance-details > summary::-webkit-details-marker { display: none; }
+.nov-finance-summary { font-size: 16px; font-weight: 700; color: #ffffff; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.nov-finance-summary::before { content: '▸'; color: #f0c040; margin-right: 2px; }
+.nov-finance-details[open] .nov-finance-summary::before { content: '▾'; }
+.nov-finance-summary-hint { font-size: 12px; font-weight: 400; color: #7ab3d4; }
+.nov-finance-note { margin: 14px 0 12px; font-size: 12.5px; color: rgba(255,255,255,0.6); line-height: 1.7; word-break: keep-all; }
+.nov-finance-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.nov-finance-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12.5px; color: rgba(255,255,255,0.88); }
+.nov-finance-table th { text-align: left; font-weight: 600; color: #7ab3d4; padding: 8px 8px; border-bottom: 1px solid rgba(255,255,255,0.18); white-space: nowrap; }
+.nov-finance-table td { padding: 8px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); vertical-align: top; word-break: keep-all; }
+.nov-finance-table td.nf-strong { color: #f0c040; font-weight: 700; white-space: nowrap; }
+.nov-finance-table tr.nf-seg td { color: #f0c040; font-weight: 700; font-size: 11.5px; letter-spacing: 0.08em; padding-top: 14px; border-bottom-color: rgba(240,192,64,0.3); }
 .edition-detail-link.is-disabled {
   color: #999;
   pointer-events: none;
@@ -2259,13 +2273,13 @@ body {
     <p class="hero-badge">Mercedes-Benz Official Dealer · Motor One</p>
     <h1 class="hero-title">가격 및 <span>프로모션</span></h1>
 
-    <p class="hero-date">2026.10 기준 / VAT 포함 / 단위: 원</p>
+    <p class="hero-date">2026.11 기준 / VAT 포함 / 단위: 원</p>
   </div>
 </div>
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#september-policy">★ 10월 베스트</a>
+  <a class="nav-tab star" href="#september-policy">★ 11월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -2286,7 +2300,7 @@ body {
 
 <!-- NOTICE -->
 <div class="notice">
-  ※ 본 페이지는 2026년 10월 메르세데스-벤츠 코리아 공식 프로모션 기준이며, 권장 소비자가격은 <strong>2026년 8월 13일자 공식 가격표(MY26 · MY27)</strong>를 반영했습니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며, 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
+  ※ 본 페이지는 2026년 11월 메르세데스-벤츠 코리아 공식 프로모션 기준이며, 권장 소비자가격은 <strong>2026년 8월 13일자 공식 가격표(MY26 · MY27)</strong>를 반영했습니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며, 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
 <!-- 9월 구매 기준 안내 카드 -->
@@ -2296,8 +2310,8 @@ body {
   <div class="policy-update-grid">
     <div class="policy-update-item">
       <div class="policy-update-item-title">① 당월 조건은 당월 출고 건에만 적용</div>
-      <div class="policy-update-item-desc">10월 판매조건은 10월 중 잔금 납입 및 출고(등록)까지 완료되는 계약에만 적용됩니다.</div>
-      <strong class="policy-key-message">10월 계약이라도 출고가 11월이면 11월 판매조건이 적용됩니다.</strong>
+      <div class="policy-update-item-desc">11월 판매조건은 11월 중 잔금 납입 및 출고(등록)까지 완료되는 계약에만 적용됩니다.</div>
+      <strong class="policy-key-message">11월 계약이라도 출고가 12월이면 12월 판매조건이 적용됩니다.</strong>
     </div>
     <div class="policy-update-item">
       <div class="policy-update-item-title">② 계약금 기준 상향</div>
@@ -2315,10 +2329,10 @@ body {
 
 <!-- SEPTEMBER SPOTLIGHT 카드 -->
 <div class="june-spotlight-card">
-  <div class="june-spotlight-badge">OCTOBER SPOTLIGHT · 핵심 캠페인</div>
+  <div class="june-spotlight-badge">NOVEMBER SPOTLIGHT · 핵심 캠페인</div>
   <div class="june-spotlight-title">메르세데스-벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
   <div class="june-spotlight-desc">
-    GLB 250 · E 220 d · E 350 e · GLC 220 d · GLE 쿠페 · GLS의 기본 할인이 확대됐습니다. MY27 E클래스와 AMG GT · SL MY27의 판매조건도 새로 발표됐습니다.<br>
+    MY27 GLC 300에 벤츠파이낸셜 특별할인 +1%가 새로 붙고 쿠페 기본할인이 7%로 올랐습니다. 24·36개월 무이자 할부가 주요 모델에 적용되고, CLA·GLB 전기차는 100만원 지원이 시작됐습니다. EQA·EQB 특별 조건은 종료됐습니다.<br>
     <span style="color:#f0c040;font-weight:600;">강화된 조건은 MY26 재고에만 붙습니다. 재고가 빠지면 같은 차를 MY27 가격과 조건으로 사야 합니다.</span>
   </div>
 
@@ -2329,44 +2343,34 @@ body {
         <div class="spotlight-card-count">실구매가 기준</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLB 250 4MATIC</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">17%</span><span class="spotlight-deal-price">5,976만원</span></div>
-        <div class="spotlight-item-sub">기본 13% (9%→13%) + MBM 특별 4%</div>
+        <div class="spotlight-item-name">GLC 300 4MATIC Coupé AVANTGARDE (MY27)</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">8%</span><span class="spotlight-deal-price">7,967만원</span></div>
+        <div class="spotlight-item-sub">기본 7% (5%→7%) + MBF +1% 신설</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLE 450 4MATIC Coupé AMG Line</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">19%</span><span class="spotlight-deal-price">1억1,542만원</span></div>
-        <div class="spotlight-item-sub">기본 15% (12%→15%) + MBM 특별 4%</div>
+        <div class="spotlight-item-name">GLC 300 4MATIC AVANTGARDE (MY27)</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">8%</span><span class="spotlight-deal-price">7,590만원</span></div>
+        <div class="spotlight-item-sub">기본 7% + MBF +1% 신설</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">E 350 e 4MATIC EXCLUSIVE</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">14%</span><span class="spotlight-deal-price">8,600만원</span></div>
-        <div class="spotlight-item-sub">기본 14% (11%→14%)</div>
+        <div class="spotlight-item-name">GLC 300 4MATIC AMG Line (MY27)</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">8%</span><span class="spotlight-deal-price">8,786만원</span></div>
+        <div class="spotlight-item-sub">기본 7% + MBF +1% 신설</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">E 220 d 4MATIC EXCLUSIVE</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">12%</span><span class="spotlight-deal-price">7,673만원</span></div>
-        <div class="spotlight-item-sub">기본 12% (9%→12%)</div>
+        <div class="spotlight-item-name">GLC 300 Special Edition (MY27)</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">8%</span><span class="spotlight-deal-price">7,084만원</span></div>
+        <div class="spotlight-item-sub">기본 7% + MBF +1% 신설</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLE 450 d 4MATIC Coupé</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">12%</span><span class="spotlight-deal-price">1억1,792만원</span></div>
-        <div class="spotlight-item-sub">기본 12% (8%→12%)</div>
+        <div class="spotlight-item-name">Mercedes-AMG SL 63 4MATIC+</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">9%</span><span class="spotlight-deal-price">2억2,750만원</span></div>
+        <div class="spotlight-item-sub">기본 9% 신규</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">GLC 220 d 4MATIC</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">10%</span><span class="spotlight-deal-price">7,398만원</span></div>
-        <div class="spotlight-item-sub">기본 10% (7%→10%)</div>
-      </div>
-      <div class="spotlight-item">
-        <div class="spotlight-item-name">GLS 580 4MATIC</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">9%</span><span class="spotlight-deal-price">1억7,599만원</span></div>
-        <div class="spotlight-item-sub">기본 9% (6%→9%)</div>
-      </div>
-      <div class="spotlight-item">
-        <div class="spotlight-item-name">GLS 450 4MATIC AMG Line</div>
-        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">8%</span><span class="spotlight-deal-price">1억4,168만원</span></div>
-        <div class="spotlight-item-sub">기본 8% (5%→8%)</div>
+        <div class="spotlight-item-name">CLA 200 · CLA 250+ · GLB 250+ electric (MY27)</div>
+        <div class="spotlight-deal-value"><span class="spotlight-deal-pct">100만원</span><span class="spotlight-deal-price">정액 지원</span></div>
+        <div class="spotlight-item-sub">기본 캠페인 정액 지원 신설 (예: GLB 250+ electric 6,990만 → 6,890만원)</div>
       </div>
     </div>
 
@@ -2377,18 +2381,18 @@ body {
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">GLC 300 AMG Line</div>
-        <div class="spotlight-compare-value"><span class="cmp-old">MY26 16%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 7%</span></div>
-        <div class="spotlight-item-sub">MY27는 MBM 특별할인 +4% 미적용</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 16%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 8%</span></div>
+        <div class="spotlight-item-sub">MY27는 MBF 특별할인 +1% (MY26은 +4%)</div>
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">GLC 300 Coupé AMG Line</div>
-        <div class="spotlight-compare-value"><span class="cmp-old">MY26 13%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 5%</span></div>
-        <div class="spotlight-item-sub">MY27는 MBM 특별할인 +4% 미적용</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 13%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 8%</span></div>
+        <div class="spotlight-item-sub">MY27 쿠페 기본 7% + MBF +1% · 24개월 무이자 대상</div>
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">GLC 300 AVANTGARDE</div>
-        <div class="spotlight-compare-value"><span class="cmp-old">MY26 11%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 7%</span></div>
-        <div class="spotlight-item-sub">Coupé AVANTGARDE는 11% → 5%</div>
+        <div class="spotlight-compare-value"><span class="cmp-old">MY26 11%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 8%</span></div>
+        <div class="spotlight-item-sub">Coupé AVANTGARDE도 11% → 8%</div>
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">CLE 450 4MATIC Coupé</div>
@@ -2405,7 +2409,7 @@ body {
         <div class="spotlight-compare-value"><span class="cmp-old">MY26 14%</span><span class="cmp-arrow">→</span><span class="cmp-new">MY27 12%</span></div>
         <div class="spotlight-item-sub">MY27도 MBM 특별할인 +4% 적용 · 특별 저금리(MBM JC)는 MY26만</div>
       </div>
-      <div class="spotlight-compare-warn"><span class="warn-strong">MY26 재고 소진 = 조건 종료.</span> 위 할인율은 남아있는 MY26 재고에만 적용되며, 재고가 빠진 사양은 MY27 조건으로 계약해야 합니다.<br><br>GLA 250 · EQA 250은 MY27도 동일 조건(13% / 14%)이라 연식 차이에 따른 손해가 없습니다.</div>
+      <div class="spotlight-compare-warn"><span class="warn-strong">MY26 재고 소진 = 조건 종료.</span> 위 할인율은 남아있는 MY26 재고에만 적용되며, 재고가 빠진 사양은 MY27 조건으로 계약해야 합니다.<br><br>GLA 250은 MY27도 동일 조건(13%)이라 연식 차이에 따른 손해가 없습니다.</div>
     </div>
 
     <div class="spotlight-card">
@@ -2415,11 +2419,11 @@ body {
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">골든타임 프로그램</div>
-        <div class="spotlight-item-sub">계약금 입금일부터 잔금 납입일까지 7일 이내인 계약에 MB 컬렉션 증정<br>2026년 10월 · G클래스 제외 · MY27 S클래스 사전계약 고객은 전원 제공<br>골프백 세트 / 캠핑 체어 2개 / 토트백 / 피크닉 매트·테이블 중 차량 등급별 1개</div>
+        <div class="spotlight-item-sub">계약금 입금일부터 잔금 납입일까지 7일 이내인 계약에 MB 컬렉션 증정<br>2026년 11월 (세부 조건 별도 확인) · G클래스 제외 · MY27 S클래스 사전계약 고객은 전원 제공<br>골프백 세트 / 캠핑 체어 2개 / 토트백 / 피크닉 매트·테이블 중 차량 등급별 1개</div>
       </div>
       <div class="spotlight-item">
-        <div class="spotlight-item-name">6개월 월 납입금 지원</div>
-        <div class="spotlight-item-sub">안심보장할부 이용 시 초기 6개월 납입금 지원<br>대상: C 200 · E 200 · E 300 · GLC 300 · GLE 450 · 주요 AMG 모델<br>월 30~200만원 × 6개월</div>
+        <div class="spotlight-item-name">24 · 36개월 무이자 할부</div>
+        <div class="spotlight-item-sub">C 200 · E 200 · E 300(MY26) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델<br>선수금 조건은 모델별 상이 — 선수금 조건 별도 확인</div>
       </div>
     </div>
   </div>
@@ -2435,13 +2439,18 @@ body {
   </div>
   <div class="discount-row">
     <div class="discount-tag">타 브랜드 보유</div>
-    <div class="discount-desc">GLC · GLE 구매 시 — BMW · Audi · Genesis · Volvo · Porsche · Land Rover 등<br>타 브랜드 보유 고객 <span class="highlight">+1%</span></div>
+    <div class="discount-desc">GLC · GLE (SUV·쿠페, 전 연식) 구매 시 — BMW(Mini 제외) · Audi · Genesis · Volvo · Porsche · Land Rover · Lexus 보유 고객 <span class="highlight">+1%</span></div>
   </div>
-  <!-- 2026년 10월 특별 추가할인: MY26 Maybach S 680(mercedes-maybach-s-680) · MY26 Maybach GLS 600(mercedes-maybach-gls-600) 2개 모델 한정.
+  <!-- 2026년 11월 특별 추가할인(10월부터 유지): MY26 Maybach S 680(mercedes-maybach-s-680) · MY26 Maybach GLS 600(mercedes-maybach-gls-600) 2개 모델 한정.
        MY27(mercedes-maybach-s-680-my27) 및 기타 Maybach 모델은 대상 아님. 기본 할인·실구매가 계산과 무관한 고객 조건 안내(택 1). -->
   <div class="discount-row">
-    <div class="discount-tag">10월 특별</div>
+    <div class="discount-tag">11월 특별</div>
     <div class="discount-desc"><strong>MY26 Mercedes-Maybach S 680 · Mercedes-Maybach GLS 600</strong><br>재구매 고객 <span class="highlight">+9%</span> · 타 브랜드 보유 고객 <span class="highlight">+7%</span><span class="rule-note">※ MY26 해당 2개 모델 한정 · 재구매/타 브랜드 보유 택 1</span></div>
+  </div>
+  <!-- 2026년 11월 신규 Conquest: MY27 S-Class(Maybach 포함) — 현금할인이 아닌 보증연장 혜택. V-Class는 별도 공지 예정(미적용). -->
+  <div class="discount-row">
+    <div class="discount-tag">11월 신규</div>
+    <div class="discount-desc"><strong>MY27 S-Class (Mercedes-Maybach 포함)</strong><br>타 브랜드 보유 고객 — 보증연장(EW) <span class="highlight highlight-blue">+1년 / +3만km</span><span class="rule-note">※ 현금할인 아님 · 대상: Rolls-Royce · Bentley · BMW(Mini 제외) · Audi · Genesis · Volvo · Porsche · Land Rover · Lexus (MY26 Maybach S 680 · GLS 600 +7%도 동일 브랜드) · V-Class는 별도 공지 예정</span></div>
   </div>
   <div class="discount-row">
     <div class="discount-tag">트레이드인</div>
@@ -2473,256 +2482,89 @@ body {
 <!-- ★ 9월 BEST SECTION -->
 <div id="tab-best" class="section active">
 
-  <!-- 9월 금융 프로그램 -->
+  <!-- 11월 금융 프로그램 -->
   <div class="finance-header" id="finance-section">
-    <div class="finance-eyebrow">MBFSK · 2026.10 FINANCE PROGRAM</div>
-    <h2 class="finance-title">벤츠 파이낸셜 10월 금융 프로그램</h2>
+    <div class="finance-eyebrow">MBFSK · 2026.11 FINANCE PROGRAM</div>
+    <h2 class="finance-title">벤츠 파이낸셜 11월 금융 프로그램</h2>
     <div class="finance-divider"></div>
-    <p class="finance-desc">적용 기간 2026년 10월 (2026.10.01 공지 기준 · 견적 생성 및 금융 계약 실행 기준)</p>
+    <p class="finance-desc">적용 기간 2026년 11월 (견적 생성 및 금융 계약 실행 기준)</p>
   </div>
 
   <div class="finance-hero-block">
     <div class="finance-hero-grid">
       <div class="finance-hero-item finance-hero-item-new">
-        <div class="finance-hero-tag">10월 신설</div>
-        <div class="finance-hero-item-name">AMG 특별 저금리(MBM JC)</div>
-        <div class="finance-hero-item-desc">AMG E 53 · S 63 E Performance · GLE 53 (쿠페 포함) · GLS 63 특별 저금리 신규 적용</div>
+        <div class="finance-hero-tag">11월 신설</div>
+        <div class="finance-hero-item-name">24 · 36개월 무이자 할부</div>
+        <div class="finance-hero-item-desc">C 200 · E 200 · E 300(MY26) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델 (선수금 조건 별도 확인)</div>
       </div>
       <div class="finance-hero-item finance-hero-item-new">
-        <div class="finance-hero-tag">10월 신설</div>
-        <div class="finance-hero-item-name">MY27 E 300 4MATIC</div>
-        <div class="finance-hero-item-desc">EXCLUSIVE · AMG Line MBM 특별할인 +4% 적용 (특별 저금리 대상 아님)</div>
+        <div class="finance-hero-tag">11월 신설</div>
+        <div class="finance-hero-item-name">MY27 GLC 300 MBF +1%</div>
+        <div class="finance-hero-item-desc">SUV · 쿠페 전 트림 벤츠파이낸셜 특별할인 +1% · MY27 쿠페는 24개월 무이자 · 특별 할부 대상</div>
       </div>
       <div class="finance-hero-item">
-        <div class="finance-hero-tag finance-hero-tag-neutral">전월 동일</div>
-        <div class="finance-hero-item-name">그 외 추가할인 · 금리인하 차종</div>
-        <div class="finance-hero-item-desc">마이바흐 MY26 S 580 · S 680 운용리스 +2% 포함, 그 외 MBM 특별할인 · 특별 저금리 대상은 9월과 동일하게 유지</div>
-      </div>
-    </div>
-
-    <div class="finance-support-block">
-      <div class="finance-support-title">6개월 월 납입금 지원</div>
-      <div class="finance-support-desc">안심보장할부(MB-Sure) 이용 시 초기 6개월치 월 납입금을 벤츠파이낸셜이 지원합니다. 최대 1,200만원 상당. 아래 선수금과 월 납입금은 36개월 기준 예시입니다.</div>
-      <div class="finance-support-table-wrap">
-        <table class="finance-support-table">
-          <thead>
-            <tr>
-              <th>모델</th>
-              <th>36개월 선수금<br>연 1만km</th>
-              <th>36개월 선수금<br>연 2만km</th>
-              <th>예상 월 납입금</th>
-              <th>월 납입금 지원 혜택</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>C 200 AVANTGARDE · AMG Line</td><td>약 30%</td><td>약 35%</td><td>30만원</td><td class="finance-support-highlight">월 <strong>30만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>E 200 EXCLUSIVE</td><td>약 24%</td><td>약 28%</td><td>35만원</td><td class="finance-support-highlight">월 <strong>35만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>E 200 AMG Line</td><td>약 26%</td><td>약 29%</td><td>37만원</td><td class="finance-support-highlight">월 <strong>37만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>E 300 4MATIC</td><td>약 27%</td><td>약 31%</td><td>45만원</td><td class="finance-support-highlight">월 <strong>45만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>GLC 300 4MATIC AVANTGARDE<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 31%</td><td>약 36%</td><td>40만원</td><td class="finance-support-highlight">월 <strong>40만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>GLC 300 4MATIC AMG Line<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 27%</td><td>약 32%</td><td>45만원</td><td class="finance-support-highlight">월 <strong>45만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>GLE 450 4MATIC AMG Line<br><span class="finance-support-sub">SUV · 쿠페</span></td><td>약 28%</td><td>약 32%</td><td>60만원</td><td class="finance-support-highlight">월 <strong>60만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG GLB 35 4MATIC</td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>50만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG E 53 4MATIC+</td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>100만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG S 63 E Performance</td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>200만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG GLE 53 4MATIC+<br><span class="finance-support-sub">SUV</span></td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>115만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG GLE 53 4MATIC+ Coupé<br><span class="finance-support-sub">쿠페</span></td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>115만원</strong> × <strong>6개월</strong></td></tr>
-            <tr><td>Mercedes-AMG GLS 63 4MATIC+</td><td>-</td><td>-</td><td>-</td><td class="finance-support-highlight">월 <strong>145만원</strong> × <strong>6개월</strong></td></tr>
-          </tbody>
-        </table>
+        <div class="finance-hero-tag finance-hero-tag-neutral">11월 종료</div>
+        <div class="finance-hero-item-name">EQA · EQB 특별 조건</div>
+        <div class="finance-hero-item-desc">기본할인 10% · MBF +4% · 특별 저금리 종료 (MY26 · MY27) — 일반 할부 7.63%</div>
       </div>
     </div>
 
     <div class="finance-hero-footnotes">
-      · 특별 저금리 할부는 신차교환보상 3년, 안심보장할부·운용리스는 신차교환보상 + 타이어교환 3년이 포함됩니다.<br>
-      · 모델별 적용 금리는 아래 금리표를 참고해 주세요.<br>
-      · 법인(Fleet) 특별금융은 E 200 AVANTGARDE · E 220 d · E 350 e · E 450 · M-AMG E 53 대상이며, 법인 할부 5.89%가 적용됩니다.<br>
-      · 운용리스 교환보상 서비스는 동일하게 적용됩니다.<br>
-      · SUV · S클래스 등 그 외 세그먼트의 금리와 실제 월 납입금은 차량 사양·주행거리·심사 결과에 따라 달라질 수 있습니다.
+      · 할부 금리는 60개월 · 선수금 30% 기준이며, 앞 금리는 일반 / 뒤 금리는 리텐션(재이용) 금리입니다.<br>
+      · 특별 할부는 신차교환보상 3년, 안심보장할부 · 운용리스는 신차교환보상 + 타이어 교환 3년이 포함됩니다.<br>
+      · S 450 4MATIC SWB는 할부 이용 시 +4%, 운용리스 이용 시 +6% (서로 합산 불가) · 마이바흐 MY26 S 580 · S 680은 운용리스 +2%입니다.<br>
+      · MBF 특별할인과 무이자 · 특별 금리의 중복 적용 여부는 상품별로 별도 확인이 필요합니다.<br>
+      · 법인(Fleet) 특별 할부 5.98% · Fleet 특별 운용리스 대상은 아래 모델별 표를 참고해 주세요 (마이바흐 S 580 · S 680은 Fleet 운용리스 적용 불가).
     </div>
   </div>
 
   <div class="finance-card">
-    <div class="finance-card-label">EV · 파격 금융</div>
+    <div class="finance-card-label">EV · 금융</div>
     <div class="ev-grid">
       <div class="ev-cell">
-        <div class="ev-model">EQA · EQB</div>
-        <div class="ev-rate">0%</div>
-        <div class="ev-note">전 기간 무이자 · EQB는 SK ON 배터리 적용</div>
+        <div class="ev-model">EQE · EQS</div>
+        <div class="ev-rate">무이자</div>
+        <div class="ev-note">24/36개월 무이자 할부 (선수금 조건 별도 확인) · 특별 할부 4.19% (리텐션 3.79%) · MY27 EQS 400 포함</div>
       </div>
       <div class="ev-cell">
-        <div class="ev-model">EQE · EQS</div>
-        <div class="ev-rate">0.74%</div>
-        <div class="ev-note">최저 초저금리 · EQE 350+ SUV 시승 가능</div>
+        <div class="ev-model">EQA · EQB</div>
+        <div class="ev-rate">7.63%</div>
+        <div class="ev-note">11월 특별 금리·MBF 특별할인 종료 · 일반 할부 7.63% (리텐션 7.23%)</div>
       </div>
     </div>
   </div>
 
   <div class="finance-card">
-    <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — GLA 250 (MY26·MY27) · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC (MY26) · AMG_E 53 · S 450 SWB · AMG_S 63 · GLC 300 AV · AMG Line (쿠페 포함 · MY26) · GLE 450 (쿠페 포함) · AMG_GLE 53 (쿠페 포함) · AMG_GLS 63</div>
+    <div class="finance-card-label">FOCUS · 특별 금리 (MBM JC)</div>
+    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26) · AMG_E 53 · S 450 SWB · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
-        <div class="rate-value">0%</div>
-        <div class="rate-note">완전 무이자</div>
+        <div class="rate-value">무이자</div>
+        <div class="rate-note">지정 모델 · 선수금 조건 별도 확인</div>
       </div>
       <div class="rate-cell">
         <div class="rate-period">36개월</div>
-        <div class="rate-value">1.7%대</div>
-        <div class="rate-note">최저 금리</div>
+        <div class="rate-value">무이자</div>
+        <div class="rate-note">GLE · GLS · AMG · EQE/EQS 등 지정 모델</div>
       </div>
       <div class="rate-cell">
         <div class="rate-period">60개월</div>
-        <div class="rate-value">4.56%</div>
-        <div class="rate-note">선수금 50% 기준</div>
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- 금융 금리표 -->
-  <div class="rate-table-card">
-    <div class="rate-table-badge">Finance Rate Table</div>
-    <div class="rate-table-title">벤츠 금리표</div>
-    <div class="rate-table-sub">C 200 · E 300 · S 450 SWB · GLC 300 · GLE 450 · GLA/GLB · AMG A45S/GLB35 — MBM 특별 할인 대상 모델</div>
-    <div class="rate-table-e200-notice">※ E 200 EXCLUSIVE · E 200 AMG Line은 별도 금리 적용 (아래 참조)</div>
-    <div class="rate-table-wrap">
-      <table class="rate-table">
-        <thead>
-          <tr>
-            <th>할부기간↓ 선수금→</th>
-            <th>10%</th>
-            <th>20%</th>
-            <th>30%</th>
-            <th>40%</th>
-            <th>50%</th>
-            <th>65%</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>24개월</th>
-            <td>4.47%</td>
-            <td>4.03%</td>
-            <td>3.45%</td>
-            <td class="rate-low">2.69%</td>
-            <td class="rate-low">1.16%</td>
-            <td class="rate-zero"><span class="rate-zero-pill">무이자*</span></td>
-          </tr>
-          <tr>
-            <th>36개월</th>
-            <td>5.06%</td>
-            <td>4.76%</td>
-            <td>4.36%</td>
-            <td>3.84%</td>
-            <td class="rate-low">3.11%</td>
-            <td class="rate-low">1.19%</td>
-          </tr>
-          <tr>
-            <th>48개월</th>
-            <td>5.38%</td>
-            <td>5.15%</td>
-            <td>4.86%</td>
-            <td>4.46%</td>
-            <td class="rate-low">3.89%</td>
-            <td class="rate-low">2.43%</td>
-          </tr>
-          <tr>
-            <th>60개월</th>
-            <td>5.63%</td>
-            <td>5.44%</td>
-            <td>5.20%</td>
-            <td>4.87%</td>
-            <td class="rate-low">4.41%</td>
-            <td class="rate-low">3.22%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="rate-table-foot">무이자 조건 · 선수금 65% · 24개월 → 무이자 0.00% · 중도상환수수료 <strong>0원</strong> &nbsp;&nbsp;그 외 전 구간 → 중도상환수수료 <strong>2%</strong><br>* E 200 EXCLUSIVE / AMG Line 제외</div>
-  </div>
-
-  <!-- E200 전용 금리 안내 카드 -->
-  <div class="e200-rate-card">
-    <div class="e200-rate-title"><span class="e200-rate-icon">⚠</span> E 200 EXCLUSIVE · E 200 AMG Line 별도 금리 적용</div>
-    <div class="e200-rate-warning">E 200 EXCLUSIVE / AMG Line은 일반 금리표의 <strong>65% 선수금 · 24개월 무이자</strong> 조건이 적용되지 않습니다.</div>
-    <div class="e200-rate-warning-sub">대신 <span class="e200-highlight-rate">2.2%</span> 금리 + <span class="e200-highlight-mbm">MBM 특별 할인</span> + <span class="e200-highlight-support">6개월 월 납입금 지원</span>이 적용됩니다.</div>
-
-    <div class="e200-compare-row">
-      <div class="e200-compare-cell">
-        <div class="e200-compare-label">일반 대상 모델</div>
-        <div class="e200-compare-cond">65% 선수금 · 24개월</div>
-        <div class="e200-compare-value e200-compare-value-normal">0.00% <span>무이자</span></div>
-      </div>
-      <div class="e200-compare-arrow">vs</div>
-      <div class="e200-compare-cell e200-compare-cell-highlight">
-        <div class="e200-compare-label">E 200 EXCLUSIVE / AMG Line</div>
-        <div class="e200-compare-cond">65% 선수금 · 24개월</div>
-        <div class="e200-compare-value e200-compare-value-alert">2.2%</div>
-      </div>
-    </div>
-
-    <div class="e200-model-grid">
-      <div class="e200-model-card">
-        <div class="e200-model-name">E 200 EXCLUSIVE</div>
-        <div class="e200-model-stats">
-          <div class="e200-stat"><span class="e200-stat-label">금리</span><span class="e200-stat-value e200-stat-value-rate">2.2%</span></div>
-          <div class="e200-stat"><span class="e200-stat-label">MBM</span><span class="e200-stat-value e200-stat-value-mbm">+5%</span></div>
-          <div class="e200-stat"><span class="e200-stat-label">납입금 지원</span><span class="e200-stat-value e200-stat-value-support">35만원 × 6개월</span></div>
-        </div>
-      </div>
-      <div class="e200-model-card">
-        <div class="e200-model-name">E 200 AMG Line</div>
-        <div class="e200-model-stats">
-          <div class="e200-stat"><span class="e200-stat-label">금리</span><span class="e200-stat-value e200-stat-value-rate">2.2%</span></div>
-          <div class="e200-stat"><span class="e200-stat-label">MBM</span><span class="e200-stat-value e200-stat-value-mbm">+4%</span></div>
-          <div class="e200-stat"><span class="e200-stat-label">납입금 지원</span><span class="e200-stat-value e200-stat-value-support">37만원 × 6개월</span></div>
-        </div>
+        <div class="rate-value">3.84%~</div>
+        <div class="rate-note">특별 할부 · 선수금 30% 기준 (GLE 450 최저)</div>
       </div>
     </div>
   </div>
 
-  <!-- EQA·EQB 전용 금리표 -->
-  <div class="eq-finance-card" id="eq-finance-card">
-    <div class="eq-finance-badge">EQ Finance Rate Table</div>
-    <div class="eq-finance-title">EQA · EQB 전용 금리표</div>
-    <div class="eq-finance-sub">전동화 프로그레시브 · AMG Line 4종<br>(EQA 250 · EQA 250 AMG · EQB 300 · EQB 300 AMG) 한정</div>
-    <div class="eq-finance-wrap">
-      <table class="eq-finance-table">
-        <thead>
-          <tr>
-            <th style="width:26%;">할부기간</th>
-            <th style="width:32%;">선수금 0% 금리</th>
-            <th style="width:42%;">비고 (무이자 조건)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>24개월</th>
-            <td class="eq-finance-zero eq-finance-round-top">무이자</td>
-            <td class="eq-finance-plain">-</td>
-          </tr>
-          <tr>
-            <th>36개월</th>
-            <td class="eq-finance-zero eq-finance-round-bottom">무이자</td>
-            <td class="eq-finance-plain">-</td>
-          </tr>
-          <tr>
-            <th>48개월</th>
-            <td class="eq-finance-gold">0.5%</td>
-            <td class="eq-finance-mint eq-finance-round-top">선수금 7% → 무이자</td>
-          </tr>
-          <tr>
-            <th>60개월</th>
-            <td class="eq-finance-gold">1.6%</td>
-            <td class="eq-finance-mint eq-finance-round-bottom">선수금 22% → 무이자</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="eq-finance-foot">EQA·EQB 전동화 프로그레시브 · AMG Line 한정 프로그램 · 모든 금리는 신용등급/심사 결과에 따라 변동될 수 있습니다</div>
-  </div>
+  <!-- 11월 모델별 금융 조건 (FINANCE_CONDITIONS 데이터로 자동 생성) -->
+  <details class="finance-card nov-finance-details">
+    <summary class="nov-finance-summary">11월 모델별 금융 조건 전체 보기 <span class="nov-finance-summary-hint">MBF 특별할인 · 무이자 · 할부 금리 · 운용리스</span></summary>
+    <div class="nov-finance-note">금리: 60개월 · 선수금 30% 기준, <strong>일반 / 리텐션(재이용)</strong> 순. 무이자 할부의 선수금 조건은 모델별로 상이합니다 — 선수금 조건 별도 확인.</div>
+    <div class="nov-finance-wrap"><table class="nov-finance-table" data-finance-table>
+      <thead><tr><th>연식</th><th>모델</th><th>MBF 특별할인</th><th>MBM JC</th><th>무이자 할부</th><th>일반 할부</th><th>안심보장할부</th><th>운용리스 · Fleet</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </details>
 
   <!-- 차종별 가격표 -->
   <div style="text-align:center; margin-bottom:32px;">
@@ -3473,50 +3315,59 @@ body {
 <!-- 금융 SECTION -->
 <div id="tab-finance" class="section">
   <div class="finance-header">
-    <div class="finance-eyebrow">MBFSK · 2026.10 FINANCE PROGRAM</div>
-    <h2 class="finance-title">벤츠 파이낸셜 10월 금융 프로그램</h2>
+    <div class="finance-eyebrow">MBFSK · 2026.11 FINANCE PROGRAM</div>
+    <h2 class="finance-title">벤츠 파이낸셜 11월 금융 프로그램</h2>
     <div class="finance-divider"></div>
-    <p class="finance-desc">적용 기간 2026년 10월 (2026.10.01 공지 기준 · 견적 생성 및 금융 계약 실행 기준)</p>
+    <p class="finance-desc">적용 기간 2026년 11월 (견적 생성 및 금융 계약 실행 기준)</p>
   </div>
 
   <div class="finance-card">
-    <div class="finance-card-label">EV · 파격 금융</div>
+    <div class="finance-card-label">EV · 금융</div>
     <div class="ev-grid">
       <div class="ev-cell">
-        <div class="ev-model">EQA · EQB</div>
-        <div class="ev-rate">0%</div>
-        <div class="ev-note">전 기간 무이자 · EQB는 SK ON 배터리 적용</div>
+        <div class="ev-model">EQE · EQS</div>
+        <div class="ev-rate">무이자</div>
+        <div class="ev-note">24/36개월 무이자 할부 (선수금 조건 별도 확인) · 특별 할부 4.19% (리텐션 3.79%) · MY27 EQS 400 포함</div>
       </div>
       <div class="ev-cell">
-        <div class="ev-model">EQE · EQS</div>
-        <div class="ev-rate">0.74%</div>
-        <div class="ev-note">최저 초저금리 · EQE 350+ SUV 시승 가능</div>
+        <div class="ev-model">EQA · EQB</div>
+        <div class="ev-rate">7.63%</div>
+        <div class="ev-note">11월 특별 금리·MBF 특별할인 종료 · 일반 할부 7.63% (리텐션 7.23%)</div>
       </div>
     </div>
   </div>
 
   <div class="finance-card">
-    <div class="finance-card-label">FOCUS · 특별 금리</div>
-    <div class="finance-card-subject">대상 — GLA 250 (MY26·MY27) · GLB 250 · AMG_GLB 35 · AMG_A 45 · C 200 · E 200 · E 300 4MATIC (MY26) · AMG_E 53 · S 450 SWB · AMG_S 63 · GLC 300 AV · AMG Line (쿠페 포함 · MY26) · GLE 450 (쿠페 포함) · AMG_GLE 53 (쿠페 포함) · AMG_GLS 63</div>
+    <div class="finance-card-label">FOCUS · 특별 금리 (MBM JC)</div>
+    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26) · AMG_E 53 · S 450 SWB · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
-        <div class="rate-value">0%</div>
-        <div class="rate-note">완전 무이자</div>
+        <div class="rate-value">무이자</div>
+        <div class="rate-note">지정 모델 · 선수금 조건 별도 확인</div>
       </div>
       <div class="rate-cell">
         <div class="rate-period">36개월</div>
-        <div class="rate-value">1.7%대</div>
-        <div class="rate-note">최저 금리</div>
+        <div class="rate-value">무이자</div>
+        <div class="rate-note">GLE · GLS · AMG · EQE/EQS 등 지정 모델</div>
       </div>
       <div class="rate-cell">
         <div class="rate-period">60개월</div>
-        <div class="rate-value">4.56%</div>
-        <div class="rate-note">선수금 50% 기준</div>
+        <div class="rate-value">3.84%~</div>
+        <div class="rate-note">특별 할부 · 선수금 30% 기준 (GLE 450 최저)</div>
       </div>
     </div>
-    
   </div>
+
+  <!-- 11월 모델별 금융 조건 (FINANCE_CONDITIONS 데이터로 자동 생성) -->
+  <details class="finance-card nov-finance-details">
+    <summary class="nov-finance-summary">11월 모델별 금융 조건 전체 보기 <span class="nov-finance-summary-hint">MBF 특별할인 · 무이자 · 할부 금리 · 운용리스</span></summary>
+    <div class="nov-finance-note">금리: 60개월 · 선수금 30% 기준, <strong>일반 / 리텐션(재이용)</strong> 순. 무이자 할부의 선수금 조건은 모델별로 상이합니다 — 선수금 조건 별도 확인.</div>
+    <div class="nov-finance-wrap"><table class="nov-finance-table" data-finance-table>
+      <thead><tr><th>연식</th><th>모델</th><th>MBF 특별할인</th><th>MBM JC</th><th>무이자 할부</th><th>일반 할부</th><th>안심보장할부</th><th>운용리스 · Fleet</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </details>
 </div>
 
 <!-- A클래스 -->
@@ -4194,12 +4045,13 @@ const SALES_CONDITIONS = {
   "mercedes-amg-glc-43-4matic-coup": { basic: 3, finance: null, rent: 3 },
   // GLC MY27 (기본 할인 7% — 기존 연식과 별도 등록)
   "glc-220-d-4matic-my27": { basic: 7, finance: null, rent: 3 },
-  "glc-300-4matic-avantgarde-my27": { basic: 7, finance: null, rent: 3 },
-  "glc-300-4matic-amg-line-my27": { basic: 7, finance: null, rent: 3 },
-  "glc-300-4matic-coup-avantgarde-my27": { basic: 5, finance: null, rent: 3 },
-  "glc-300-4matic-coup-amg-line-my27": { basic: 5, finance: null, rent: 3 },
+  // 2026년 11월: MY27 GLC 300 전 트림 MBF 특별할인 +1% 신설, 쿠페 기본할인 5% → 7%
+  "glc-300-4matic-avantgarde-my27": { basic: 7, finance: 1, rent: 3 },
+  "glc-300-4matic-amg-line-my27": { basic: 7, finance: 1, rent: 3 },
+  "glc-300-4matic-coup-avantgarde-my27": { basic: 7, finance: 1, rent: 3 },
+  "glc-300-4matic-coup-amg-line-my27": { basic: 7, finance: 1, rent: 3 },
   // GLC 300 Special Edition MY27 — MY27 GLC 300 4MATIC AVANTGARDE와 동일 조건
-  "glc-300-special-edition-my27": { basic: 7, finance: null, rent: 3 },
+  "glc-300-special-edition-my27": { basic: 7, finance: 1, rent: 3 },
   // GLC electric MY27 (판매조건 미확정 — 권장소비자가격만 등록, 기존 내연기관 GLC와 별도)
   "glc-300-4matic-amg-line-electric-launch-edition-my27": { basic: null, finance: null, rent: 3 },
   "glc-300-4matic-amg-line-plus-electric-launch-edition-my27": { basic: null, finance: null, rent: 3 },
@@ -4235,7 +4087,7 @@ const SALES_CONDITIONS = {
   "mercedes-amg-g-63-manufaktur-my27": { basic: null, finance: null, rent: null },
   // AMG
   "mercedes-amg-sl-43": { basic: 9, finance: null, rent: 3 },
-  "mercedes-amg-sl-63-4matic": { basic: null, finance: null, rent: 3 },
+  "mercedes-amg-sl-63-4matic": { basic: 9, finance: null, rent: 3 },
   "mercedes-amg-gt-43-c192": { basic: 9, finance: null, rent: 3 },
   "mercedes-amg-gt-55-4matic": { basic: 3, finance: null, rent: 3 },
   "mercedes-amg-gt-63-s-e-performance": { basic: 4, finance: null, rent: 3 },
@@ -4245,13 +4097,13 @@ const SALES_CONDITIONS = {
   "mercedes-amg-gt-55-4matic-my27": { basic: 2, finance: null, rent: 3 },
   "mercedes-amg-sl-43-my27": { basic: 8, finance: null, rent: 3 },
   // EQ
-  "eqa-250-progressive": { basic: 10, finance: 4, rent: 3 },
+  "eqa-250-progressive": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
   // MY27
-  "eqa-250-progressive-my27": { basic: 10, finance: 4, rent: 3 },
-  "eqa-250-amg-line": { basic: 10, finance: 4, rent: 3 },
-  "eqa-250-amg-line-my27": { basic: 10, finance: 4, rent: 3 },
-  "eqb-300-4matic-progressive": { basic: 10, finance: 4, rent: 3 },
-  "eqb-300-4matic-amg-line": { basic: 10, finance: 4, rent: 3 },
+  "eqa-250-progressive-my27": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
+  "eqa-250-amg-line": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
+  "eqa-250-amg-line-my27": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
+  "eqb-300-4matic-progressive": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
+  "eqb-300-4matic-amg-line": { basic: null, finance: null, rent: 3 }, // 11월: 기본할인 10%·MBF +4% 종료
   "eqe-350-suv": { basic: 10, finance: null, rent: 3 },
   "eqe-350": { basic: 10, finance: null, rent: 3 },
   "eqe-500-4matic-suv": { basic: 10, finance: null, rent: 3 },
@@ -4275,6 +4127,23 @@ const SALES_CONDITIONS = {
 };
 
 /* =====================================================
+   ★★★★★ 정액 지원금(원) 수정 영역 ★★★★★
+
+   기본할인(%)·벤츠파이낸셜(%)과 별개인 정액 현금 지원입니다.
+   실구매가 = calculatePurchasePrice(차량가격 − 지원금, 기본할인, 벤츠파이낸셜)
+   (차량가격 자체는 VEHICLE_DATA 값 그대로 표시)
+   2026년 11월 기본 캠페인: MY27 CLA 200 / CLA 250+ / GLB 250+ electric 100만원
+   ===================================================== */
+const CASH_SUPPORT = {
+  "cla-200-electric-essential-my27": 1000000,
+  "cla-200-electric-advanced-my27": 1000000,
+  "cla-200-electric-amg-line-launch-edition-my27": 1000000,
+  "cla-250-plus-electric-my27": 1000000,
+  "cla-250-plus-electric-amg-line-launch-edition-my27": 1000000,
+  "glb-250-plus-electric-my27": 1000000
+};
+
+/* =====================================================
    ★★★★★ 안심보장할부 6개월 지원금 수정 영역 ★★★★★
 
    monthly = 월 지원금(만원)
@@ -4283,7 +4152,10 @@ const SALES_CONDITIONS = {
    아래 숫자만 수정하면 해당 모델 가격표 하단 안내가 자동 변경됩니다.
    총 지원금은 monthly × months 로 자동 계산합니다.
    ===================================================== */
-const MBSURE_SUPPORT = {
+// 2026년 11월: 11월 벤츠파이낸셜 자료에 "6개월 월 납입금 지원" 항목이 없어 표시를 중단했습니다.
+// 재개 공지가 오면 아래 주석의 10월 값을 참고해 다시 입력하세요.
+/* 10월 값:
+{
   // C-Class
   "c-200-avantgarde": { monthly: 30, months: 6 },
   "c-200-amg-line": { monthly: 30, months: 6 },
@@ -4312,6 +4184,98 @@ const MBSURE_SUPPORT = {
   "mercedes-amg-gle-53-4matic-coup": { monthly: 115, months: 6 },
   "mercedes-amg-gls-63-4matic": { monthly: 145, months: 6 }
 };
+*/
+const MBSURE_SUPPORT = {};
+
+/* =====================================================
+   ★★★★★ 2026년 11월 모델별 금융 조건 (벤츠파이낸셜 공식 자료) ★★★★★
+   mbf = MBF 특별할인 / jc = MBM JC(특별 금리) / free = 무이자 할부
+   inst = 일반 할부, sure = 안심보장할부 (60개월·선수금 30%, "일반 / 리텐션")
+   lease = 운용리스 / fleet = Fleet 특별 금융
+   ※ 가격표 실구매가 계산에는 사용하지 않는 안내용 데이터입니다.
+   ===================================================== */
+const FINANCE_CONDITIONS = [
+  { seg: "C-Class" },
+  { my: "MY26", model: "C 200 AVANTGARDE · AMG Line", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.33% / 4.93%", sure: "특별 5.73% / 5.33%", lease: "특별 리스", fleet: "-" },
+  { seg: "E-Class" },
+  { my: "MY26", model: "E 200 AVANTGARDE", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "E 200 EXCLUSIVE", mbf: "+5%", jc: "O", free: "24개월", inst: "특별 5.87% / 5.47%", sure: "특별 5.64% / 5.24%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "E 200 AMG Line", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.88% / 5.48%", sure: "특별 5.66% / 5.26%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "E 220 d 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "E 300 4MATIC AMG Line · EXCLUSIVE", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.33% / 4.93%", sure: "특별 5.72% / 5.32%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY27", model: "E 200 EXCLUSIVE", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.80% / 5.40%", sure: "특별 6.10% / 5.70%", lease: "특별 리스", fleet: "-" },
+  { my: "MY27", model: "E 200 AMG Line", mbf: "+3%", jc: "O", free: "24개월", inst: "특별 5.82% / 5.42%", sure: "특별 6.11% / 5.71%", lease: "특별 리스", fleet: "-" },
+  { my: "MY27", model: "E 300 4MATIC AMG Line · EXCLUSIVE", mbf: "+4%", jc: "-", free: "-", inst: "6.60% / 6.20%", sure: "6.41% / 6.01%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "E 350 e 4MATIC EXCLUSIVE", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26·MY27", model: "E 450 4MATIC AMG Line · EXCLUSIVE", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "Mercedes-AMG E 53 4MATIC+", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { seg: "S-Class · Maybach" },
+  { my: "MY27", model: "S 350 d · S 450 · S 500 · S 580", mbf: "-", jc: "O (재구매 운용리스)", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년 · 재구매 특별 리스 + 바디케어(리텐션) + 고객 사은품(여행상품권)", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY27", model: "Mercedes-Maybach S 580 · S 680", mbf: "-", jc: "O (재구매 운용리스)", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년 · 재구매 특별 리스 + 바디케어(리텐션) + 고객 사은품(여행상품권)", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "S 350 d 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "S 450 4MATIC SWB", mbf: "할부 +4% / 운용리스 +6%", jc: "O", free: "24개월", inst: "특별 5.40% / 5.00%", sure: "특별 5.75% / 5.35%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "S 450 · S 500 · S 580 4MATIC (Long)", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "Mercedes-AMG S 63 E Performance", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-Maybach S 580 · S 680", mbf: "운용리스 +2%", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% (운용리스 적용 불가)" },
+  { seg: "SUV" },
+  { my: "MY26", model: "GLC 220 d 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "GLC 300 4MATIC AVANTGARDE (SUV · 쿠페)", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.39% / 4.99%", sure: "특별 5.75% / 5.35%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "GLC 300 4MATIC AMG Line (SUV · 쿠페)", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.28% / 4.88%", sure: "특별 5.69% / 5.29%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY27", model: "GLC 300 4MATIC SUV", mbf: "+1%", jc: "-", free: "-", inst: "6.60% / 6.20%", sure: "6.43% / 6.03%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY27", model: "GLC 300 4MATIC 쿠페", mbf: "+1%", jc: "O", free: "24개월", inst: "특별 5.65% / 5.25%", sure: "특별 5.99% / 5.59%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG GLC 43 4MATIC (SUV · 쿠페)", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "GLE 350 4MATIC", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "GLE 300 d 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "GLE 450 4MATIC (SUV · 쿠페)", mbf: "+4%", jc: "O", free: "24/36개월", inst: "특별 3.84% / 3.44%", sure: "특별 4.80% / 4.40%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "GLE 450 d 4MATIC 쿠페", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG GLE 53 4MATIC+ (SUV · 쿠페)", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "GLS 450 d 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "GLS 450 · GLS 580 4MATIC", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-Maybach GLS 600", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.35% / 3.95%", sure: "특별 5.07% / 4.67%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG GLS 63 4MATIC+", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.47% / 4.07%", sure: "특별 5.13% / 4.73%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "G 450 d", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26·MY27", model: "Mercedes-AMG G 63", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.50% / 4.10%", sure: "특별 5.15% / 4.75%", lease: "특별 리스", fleet: "-" },
+  { seg: "Compact" },
+  { my: "MY26", model: "A 220 · CLA 250 4MATIC", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "GLA 250 4MATIC", mbf: "+4%", jc: "-", free: "-", inst: "6.60% / 6.20%", sure: "6.43% / 6.03%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "GLB 250 4MATIC", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.26% / 4.86%", sure: "특별 5.68% / 5.28%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG GLB 35 4MATIC", mbf: "+4%", jc: "O", free: "24/36개월", inst: "특별 4.08% / 3.68%", sure: "특별 4.87% / 4.47%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG A 45 S 4MATIC+", mbf: "+4%", jc: "-", free: "-", inst: "6.60% / 6.20%", sure: "6.43% / 6.03%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "Mercedes-AMG CLA 45 S 4MATIC+", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { seg: "Dream · AMG" },
+  { my: "전 연식", model: "CLE 전 모델 · AMG SL 43 · AMG GT 43 / 55 / 63 S E Performance · Maybach SL 680", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { seg: "EQ" },
+  { my: "MY26·MY27", model: "EQA 250 (AMG Line 포함) · MY26 EQB 300", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
+  { my: "MY26", model: "EQE 350+ SUV · EQE 350+ · EQE 500 4MATIC", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.19% / 3.79%", sure: "특별 4.88% / 4.48%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26·MY27", model: "EQS 450 · EQS 580 SUV · MY27 EQS 400", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.19% / 3.79%", sure: "특별 4.88% / 4.48%", lease: "특별 리스", fleet: "-" },
+  { my: "MY26", model: "G 580 with EQ Technology", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY26", model: "Mercedes-Maybach EQS 680 SUV", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" }
+];
+
+// 모델별 금융 조건표를 [data-finance-table]에 채운다 (BEST 탭 + 금융 탭)
+function renderFinanceConditions() {
+  document.querySelectorAll('table[data-finance-table] tbody').forEach(function (tbody) {
+    tbody.innerHTML = '';
+    FINANCE_CONDITIONS.forEach(function (r) {
+      var tr = document.createElement('tr');
+      if (r.seg) {
+        tr.className = 'nf-seg';
+        var td = document.createElement('td');
+        td.colSpan = 8;
+        td.textContent = r.seg;
+        tr.appendChild(td);
+      } else {
+        [r.my, r.model, r.mbf, r.jc, r.free, r.inst, r.sure, r.lease + (r.fleet && r.fleet !== '-' ? ' / ' + r.fleet : '')].forEach(function (v, i) {
+          var td = document.createElement('td');
+          td.textContent = v;
+          if ((i === 2 || i === 4) && v !== '-') td.className = 'nf-strong';
+          tr.appendChild(td);
+        });
+      }
+      tbody.appendChild(tr);
+    });
+  });
+}
 
 /* =====================================================
    ★★★★★ 차량가격 수정 영역 ★★★★★
@@ -4595,9 +4559,11 @@ function applyVehicleData() {
     var purchaseError = null;
     // newPrice 0 = 공식 차량가격 미반영 MY27 모델: 판매조건은 표시하되 실구매가 계산에서 제외한다.
     var priceUnconfirmed = data.newPrice === 0;
+    // 정액 지원금(CASH_SUPPORT)은 차량가격에서 먼저 차감한 뒤 기존 계산 함수에 넘긴다.
+    var cashSupport = (typeof CASH_SUPPORT !== 'undefined' && CASH_SUPPORT[id]) || 0;
     if (!priceUnconfirmed) {
       try {
-        purchasePrice = calculatePurchasePrice(data.newPrice, discount, financeDiscount);
+        purchasePrice = calculatePurchasePrice(data.newPrice - cashSupport, discount, financeDiscount);
       } catch (error) {
         purchaseError = error.message;
         console.error('[실구매가 검증 오류]', id, purchaseError);
@@ -4619,7 +4585,11 @@ function applyVehicleData() {
       // 기본 할인 칸(col-promo)의 기존 3단 표시만 그대로 보존한다.
       var skipPromoRewrite = (id === 's-450-4matic-swb');
 
-      if (promoCell && !skipPromoRewrite) {
+      if (promoCell && !skipPromoRewrite && cashSupport && (discount === null || discount === undefined)) {
+        // 정액 지원금만 있는 모델: "100만원 지원" 표시
+        promoCell.className = 'col-promo';
+        promoCell.textContent = (cashSupport / 10000).toLocaleString('ko-KR') + '만원 지원';
+      } else if (promoCell && !skipPromoRewrite) {
         promoCell.className = (discount === null || discount === undefined) ? 'col-dash' : 'col-promo';
         if (hasFinance) {
           promoCell.innerHTML =
@@ -4807,6 +4777,13 @@ function validateSalesConditions() {
   });
   rentExclusionIssues.forEach(function (item) {
     console.warn('[G-Class rental exclusion regression detected]', item.model, '(' + item.id + ')', '현재 rent:', item.value, '정상: null — G-Class는 장기렌트 +3% 제외 대상입니다.');
+  });
+  // 정액 지원금 모델ID가 VEHICLE_DATA에 없으면 경고한다.
+  Object.keys(CASH_SUPPORT).forEach(function (id) {
+    if (!(id in VEHICLE_DATA)) {
+      invalidValues.push({ id: id, model: id, key: 'CASH_SUPPORT', value: CASH_SUPPORT[id] });
+      console.warn('[정액 지원금 모델ID 오류]', id, '— VEHICLE_DATA에 없습니다.');
+    }
   });
   // 예외 목록의 모델ID가 SALES_CONDITIONS에 없으면(오타·삭제) 함께 경고한다.
   RENT_EXCLUDED_MODEL_IDS.forEach(function (id) {
@@ -5048,6 +5025,7 @@ document.addEventListener('DOMContentLoaded', function() {
   syncDuplicatePriceTables();
   applyVehicleData();
   applyMBSureSupportBenefits();
+  renderFinanceConditions();
 
   applyEditionDetailLinks();
   applyRetentionBodycareBenefits();
