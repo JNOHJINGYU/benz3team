@@ -768,6 +768,7 @@ body {
 .fin-badge-free { background: #e6f0fb; color: #1d4f91; }
 .fin-badge-low { background: #e5f5ea; color: #1e7a3e; }
 .fin-badge-conquest { background: #efe8fb; color: #5b2a9e; }
+.fin-badge-retention { background: #fff3d6; color: #946200; font-size: 10px; font-weight: 700; }
 /* Conquest 적용 브랜드 안내 (장기렌트 안내 바로 아래) */
 /* 장기렌트 안내(.rent-note)와 같은 글씨체·크기·색상 */
 .conquest-note { margin: -28px 0 34px; font-size: 13px; color: #111; line-height: 1.6; text-align: left; }
@@ -4304,6 +4305,16 @@ const CONQUEST_BADGES = {
 };
 
 /* =====================================================
+   ★★★★★ 2026년 11월 Retention(재구매) 뱃지 ★★★★★
+   MY26 Mercedes-Maybach S 680 / GLS 600 — 재구매 고객 +9%.
+   표시 전용 — 기본할인·실구매가 계산에 합산하지 않으며, Conquest(+7%)와 택 1입니다.
+   ===================================================== */
+const RETENTION_BADGES = {
+  "mercedes-maybach-s-680": { label: "9% Retention" },
+  "mercedes-maybach-gls-600": { label: "9% Retention" }
+};
+
+/* =====================================================
    ★★★★★ 2026년 11월 모델별 금융 조건 (벤츠파이낸셜 공식 자료) ★★★★★
    mbf = MBF 특별할인 / jc = MBM JC(특별 금리) / free = 무이자 할부
    inst = 일반 할부, sure = 안심보장할부 (60개월·선수금 30%, "일반 / 리텐션")
@@ -4371,13 +4382,15 @@ const FINANCE_CONDITIONS = [
 // 모델명 바로 오른쪽에 금융혜택 뱃지 삽입 (메인 가격표 + 차종별 탭 동일 data-model-id 모두)
 function applyFinanceBadges() {
   var conquest = (typeof CONQUEST_BADGES !== 'undefined') ? CONQUEST_BADGES : {};
+  var retention = (typeof RETENTION_BADGES !== 'undefined') ? RETENTION_BADGES : {};
   var ids = Object.keys(FINANCE_BADGES);
-  Object.keys(conquest).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
+  Object.keys(conquest).concat(Object.keys(retention)).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
   ids.forEach(function (id) {
     var b = FINANCE_BADGES[id] || {};
     var c = conquest[id];
+    var rt = retention[id];
     var terms = Array.isArray(b.interestFree) ? b.interestFree : [];
-    if (!terms.length && !b.lowInterest && !(c && c.label)) return;
+    if (!terms.length && !b.lowInterest && !(c && c.label) && !(rt && rt.label)) return;
     document.querySelectorAll('tr[data-model-id="' + id + '"]').forEach(function (tr) {
       var cell = tr.children[0];
       if (!cell || cell.querySelector('.fin-badges')) return; // 중복 삽입 방지
@@ -4401,6 +4414,13 @@ function applyFinanceBadges() {
         cq.textContent = c.label;
         cq.title = '타 브랜드 보유 고객 혜택 (재구매 혜택과 택 1)';
         wrap.appendChild(cq);
+      }
+      if (rt && rt.label) {
+        var re = document.createElement('span');
+        re.className = 'fin-badge fin-badge-retention';
+        re.textContent = rt.label;
+        re.title = '벤츠 재구매 고객 혜택 (Conquest와 택 1)';
+        wrap.appendChild(re);
       }
       // 모델명 첫 텍스트 바로 뒤(줄바꿈·부가표기·상세보기보다 앞)에 둔다.
       var first = null;
