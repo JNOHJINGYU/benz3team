@@ -345,7 +345,7 @@ body {
   .gclass-warning-item { padding: 16px 18px; }
 }
 
-/* ── 벤츠 파이낸셜 9월 핵심 혜택 블록 (신설 카드 + 6개월 지원표) ── */
+/* ── 벤츠 파이낸셜 월별 핵심 혜택 블록 (신설 카드 + 안내) ── */
 .finance-hero-block {
   max-width: 1160px;
   margin: 0 auto 28px;
@@ -767,6 +767,14 @@ body {
 .fin-badge { display: inline-block; font-size: 10px; font-weight: 700; line-height: 1; padding: 3px 5px; border-radius: 5px; white-space: nowrap; letter-spacing: -0.02em; }
 .fin-badge-free { background: #e6f0fb; color: #1d4f91; }
 .fin-badge-low { background: #e5f5ea; color: #1e7a3e; }
+.fin-badge-conquest { background: #efe8fb; color: #5b2a9e; }
+/* Conquest 적용 브랜드 안내 (장기렌트 안내 바로 아래) */
+.conquest-note { margin: -28px 0 34px; font-size: 12px; color: #777; line-height: 1.6; text-align: left; word-break: keep-all; }
+.conquest-note-sub { display: block; font-size: 11px; color: #8a8a8a; margin-top: 2px; }
+@media (max-width: 768px) {
+  .conquest-note { font-size: 11px; }
+  .conquest-note-sub { font-size: 10.5px; }
+}
 /* 11월 모델별 금융 조건 (접이식) */
 .nov-finance-details > summary { list-style: none; cursor: pointer; }
 .nov-finance-details > summary::-webkit-details-marker { display: none; }
@@ -1131,7 +1139,7 @@ body {
   word-break: keep-all;
 }
 
-/* ── 9월 구매 기준 안내 카드 (필독) ── */
+/* ── 구매 기준 안내 카드 (2026.09.01 시행 · 필독) ── */
 .policy-update-card {
   width: 100%;
   max-width: 1160px;
@@ -1261,7 +1269,7 @@ body {
   .policy-amount-old { font-size: 14px; }
 }
 
-/* ── SEPTEMBER SPOTLIGHT: 요약 카드 그리드 (최종 할인 강화/연식변경 비교/고객 혜택) ── */
+/* ── MONTHLY SPOTLIGHT: 요약 카드 그리드 (최종 할인 강화/연식변경 비교/고객 혜택) ── */
 .spotlight-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2284,7 +2292,7 @@ body {
 
 <!-- NAV TABS -->
 <nav class="nav-tabs">
-  <a class="nav-tab star" href="#september-policy">★ 11월 베스트</a>
+  <a class="nav-tab star" href="#monthly-policy">★ 11월 베스트</a>
   <a class="nav-tab" data-tab="finance" href="#finance-section">금융</a>
   <a class="nav-tab" data-tab="a" href="#tab-a-price">A클래스</a>
   <a class="nav-tab" data-tab="cla" href="#tab-cla-price">CLA</a>
@@ -2308,8 +2316,8 @@ body {
   ※ 본 페이지는 2026년 11월 메르세데스-벤츠 코리아 공식 프로모션 기준이며, 권장 소비자가격은 <strong>2026년 8월 13일자 공식 가격표(MY26 · MY27)</strong>를 반영했습니다. 표시 가격은 모두 <strong>VAT 포함</strong>, 만원 단위 절삭이며, 옵션·재고 상황에 따라 실제 견적과 차이가 있을 수 있습니다.
 </div>
 
-<!-- 9월 구매 기준 안내 카드 -->
-<div class="policy-update-card" id="september-policy">
+<!-- 구매 기준 안내 카드 (2026.09.01 시행 정책) -->
+<div class="policy-update-card" id="monthly-policy">
   <div class="policy-update-badge">2026.09.01 시행 · 필독</div>
   <div class="policy-update-title">9월부터 달라지는 구매 기준 2가지</div>
   <div class="policy-update-grid">
@@ -2332,7 +2340,7 @@ body {
   </div>
 </div>
 
-<!-- SEPTEMBER SPOTLIGHT 카드 -->
+<!-- MONTHLY SPOTLIGHT 카드 (현재 11월) -->
 <div class="june-spotlight-card">
   <div class="june-spotlight-badge">NOVEMBER SPOTLIGHT · 핵심 캠페인</div>
   <div class="june-spotlight-title">메르세데스-벤츠 파이낸셜 &amp; 모빌리티 조인트 캠페인 — 이번 달의 무기</div>
@@ -2484,7 +2492,7 @@ body {
   </a>
 </div>
 
-<!-- ★ 9월 BEST SECTION -->
+<!-- ★ 이달의 BEST SECTION -->
 <div id="tab-best" class="section active">
 
   <!-- 11월 금융 프로그램 -->
@@ -2573,7 +2581,7 @@ body {
 
   <!-- 차종별 가격표 -->
   <div style="text-align:center; margin-bottom:32px;">
-    <div class="finance-eyebrow">2026 September · Price List</div>
+    <div class="finance-eyebrow">2026 November · Price List</div>
     <h2 class="finance-title" style="color:#111;">차종별 가격표</h2>
     <div class="finance-divider"></div>
   </div>
@@ -2886,6 +2894,7 @@ body {
       </tbody>
     </table></div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+  <div class="conquest-note">※ Conquest 적용 브랜드: Rolls-Royce, Bentley, BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus<span class="conquest-note-sub">※ MY27 S클래스 Conquest 혜택은 현금할인이 아닌 보증 연장(EW +1년 / +3만 km)입니다.</span></div>
     <div class="retention-bodycare-benefit maybach-retention-benefit" data-retention-target="maybachSClass">
       <div class="retention-bodycare-main">
         <span class="retention-bodycare-icon">🛡</span>
@@ -3007,6 +3016,7 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+  <div class="conquest-note">※ Conquest 적용 브랜드: BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus</div>
 
   <!-- GLC MY27 -->
   <div class="car-section">
@@ -3092,6 +3102,7 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+  <div class="conquest-note">※ Conquest 적용 브랜드: BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus</div>
   </div>
 
   <!-- GLS -->
@@ -3313,6 +3324,7 @@ body {
     </table>
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
+  <div class="conquest-note">※ Conquest 적용 브랜드: Rolls-Royce, Bentley, BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus</div>
 </div>
 
 </div>
@@ -4202,6 +4214,8 @@ const FINANCE_BADGES = {
   // MY26 · 24개월 무이자 + 특별 할부
   "c-200-avantgarde": { interestFree: [24], lowInterest: true },
   "c-200-amg-line": { interestFree: [24], lowInterest: true },
+  // C 200 Final Edition: 기본 캠페인 자료 MBF +4%·MBM JC ✓, 금융자료 C 200(MY26) 무이자 24개월 기준 적용
+  "c-200-final-edition": { interestFree: [24], lowInterest: true },
   "e-200-exclusive": { interestFree: [24], lowInterest: true },
   "e-200-amg-line": { interestFree: [24], lowInterest: true },
   "e-300-4matic-exclusive": { interestFree: [24], lowInterest: true },
@@ -4240,6 +4254,53 @@ const FINANCE_BADGES = {
   "eqs-580-4matic-suv": { interestFree: [24, 36], lowInterest: true },
   // MY27 · 24/36개월 무이자 + 특별 할부
   "mercedes-amg-g-63-my27": { interestFree: [24, 36], lowInterest: true }
+};
+
+/* =====================================================
+   ★★★★★ 2026년 11월 Conquest(프리미엄 브랜드 특별 할인) 뱃지 ★★★★★
+   공식 자료 [5] 기준. 표시 전용 — 기본할인·실구매가 계산에 합산하지 않습니다.
+   재구매(Cash Retention) 혜택과 택 1. EW = 보증연장(+1년 / +3만km), 현금할인 아님.
+   ===================================================== */
+const CONQUEST_BADGES = {
+  // GLC SUV & Coupé — 전체 MY +1% (MY26)
+  "glc-220-d-4matic": { label: "1% Conquest" },
+  "glc-300-4matic-avantgarde": { label: "1% Conquest" },
+  "glc-300-4matic-amg-line": { label: "1% Conquest" },
+  "glc-300-4matic-amg-line-140-edition": { label: "1% Conquest" },
+  "glc-300-4matic-coup-avantgarde": { label: "1% Conquest" },
+  "glc-300-4matic-coup-amg-line": { label: "1% Conquest" },
+  "mercedes-amg-glc-43-4matic": { label: "1% Conquest" },
+  "mercedes-amg-glc-43-4matic-coup": { label: "1% Conquest" },
+  // GLC SUV & Coupé — 전체 MY +1% (MY27)
+  "glc-220-d-4matic-my27": { label: "1% Conquest" },
+  "glc-300-4matic-avantgarde-my27": { label: "1% Conquest" },
+  "glc-300-4matic-amg-line-my27": { label: "1% Conquest" },
+  "glc-300-4matic-coup-avantgarde-my27": { label: "1% Conquest" },
+  "glc-300-4matic-coup-amg-line-my27": { label: "1% Conquest" },
+  "glc-300-special-edition-my27": { label: "1% Conquest" },
+  // GLE SUV & Coupé — 전체 MY +1%
+  "gle-350-4matic": { label: "1% Conquest" },
+  "gle-300-d-4matic": { label: "1% Conquest" },
+  "gle-450-4matic": { label: "1% Conquest" },
+  "gle-450-4matic-amg-line": { label: "1% Conquest" },
+  "mercedes-amg-gle-53-4matic": { label: "1% Conquest" },
+  "gle-450-d-4matic-coup-amg-line": { label: "1% Conquest" },
+  "gle-450-4matic-coup-amg-line": { label: "1% Conquest" },
+  "mercedes-amg-gle-53-4matic-coup": { label: "1% Conquest" },
+  // MY26 Mercedes-Maybach S 680 / GLS 600 (MANUFAKTUR 포함) +7%
+  "mercedes-maybach-s-680": { label: "7% Conquest" },
+  "mercedes-maybach-gls-600": { label: "7% Conquest" },
+  "mercedes-maybach-gls-600-manufaktur": { label: "7% Conquest" },
+  // MY27 S-Class (Maybach 포함) — 보증연장 EW +1년 / +3만km
+  "s-350-d-4matic-my27": { label: "EW Conquest" },
+  "s-450-4matic-my27": { label: "EW Conquest" },
+  "s-450-4matic-long-exclusive-my27": { label: "EW Conquest" },
+  "s-450-4matic-long-amg-line-my27": { label: "EW Conquest" },
+  "s-500-4matic-long-my27": { label: "EW Conquest" },
+  "s-580-4matic-long-my27": { label: "EW Conquest" },
+  "mercedes-maybach-s-580-my27": { label: "EW Conquest" },
+  "mercedes-maybach-s-580-manufaktur-my27": { label: "EW Conquest" },
+  "mercedes-maybach-s-680-my27": { label: "EW Conquest" }
 };
 
 /* =====================================================
@@ -4309,10 +4370,14 @@ const FINANCE_CONDITIONS = [
 
 // 모델명 바로 오른쪽에 금융혜택 뱃지 삽입 (메인 가격표 + 차종별 탭 동일 data-model-id 모두)
 function applyFinanceBadges() {
-  Object.keys(FINANCE_BADGES).forEach(function (id) {
-    var b = FINANCE_BADGES[id];
-    var terms = (b && Array.isArray(b.interestFree)) ? b.interestFree : [];
-    if (!terms.length && !(b && b.lowInterest)) return;
+  var conquest = (typeof CONQUEST_BADGES !== 'undefined') ? CONQUEST_BADGES : {};
+  var ids = Object.keys(FINANCE_BADGES);
+  Object.keys(conquest).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
+  ids.forEach(function (id) {
+    var b = FINANCE_BADGES[id] || {};
+    var c = conquest[id];
+    var terms = Array.isArray(b.interestFree) ? b.interestFree : [];
+    if (!terms.length && !b.lowInterest && !(c && c.label)) return;
     document.querySelectorAll('tr[data-model-id="' + id + '"]').forEach(function (tr) {
       var cell = tr.children[0];
       if (!cell || cell.querySelector('.fin-badges')) return; // 중복 삽입 방지
@@ -4329,6 +4394,13 @@ function applyFinanceBadges() {
         low.className = 'fin-badge fin-badge-low';
         low.textContent = '저금리';
         wrap.appendChild(low);
+      }
+      if (c && c.label) {
+        var cq = document.createElement('span');
+        cq.className = 'fin-badge fin-badge-conquest';
+        cq.textContent = c.label;
+        cq.title = '타 브랜드 보유 고객 혜택 (재구매 혜택과 택 1)';
+        wrap.appendChild(cq);
       }
       // 모델명 첫 텍스트 바로 뒤(줄바꿈·부가표기·상세보기보다 앞)에 둔다.
       var first = null;
