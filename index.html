@@ -762,6 +762,11 @@ body {
   color: #102A4C;
   transform: translateX(2px);
 }
+/* 11월 금융혜택 뱃지 (모델명 옆) */
+.fin-badges { display: inline-flex; flex-wrap: wrap; gap: 3px; margin-left: 5px; vertical-align: middle; }
+.fin-badge { display: inline-block; font-size: 10px; font-weight: 700; line-height: 1; padding: 3px 5px; border-radius: 5px; white-space: nowrap; letter-spacing: -0.02em; }
+.fin-badge-free { background: #e6f0fb; color: #1d4f91; }
+.fin-badge-low { background: #e5f5ea; color: #1e7a3e; }
 /* 11월 모델별 금융 조건 (접이식) */
 .nov-finance-details > summary { list-style: none; cursor: pointer; }
 .nov-finance-details > summary::-webkit-details-marker { display: none; }
@@ -4188,6 +4193,56 @@ const CASH_SUPPORT = {
 const MBSURE_SUPPORT = {};
 
 /* =====================================================
+   ★★★★★ 2026년 11월 금융혜택 뱃지 (벤츠파이낸셜 공식 금융자료 기준) ★★★★★
+   interestFree: 무이자 할부 기간 배열  [24] → "24 무이자", [24, 36] → "24/36 무이자", [] → 없음
+   lowInterest:  true → "저금리" (일반 할부에 '특별 할부' 금리가 명시된 차량만)
+   키 = 가격표 data-model-id (MY26/MY27 별도 ID). 차량가격·할인 데이터와 무관한 표시 전용 데이터입니다.
+   ===================================================== */
+const FINANCE_BADGES = {
+  // MY26 · 24개월 무이자 + 특별 할부
+  "c-200-avantgarde": { interestFree: [24], lowInterest: true },
+  "c-200-amg-line": { interestFree: [24], lowInterest: true },
+  "e-200-exclusive": { interestFree: [24], lowInterest: true },
+  "e-200-amg-line": { interestFree: [24], lowInterest: true },
+  "e-300-4matic-exclusive": { interestFree: [24], lowInterest: true },
+  "e-300-4matic-amg-line": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-avantgarde": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-coup-avantgarde": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-amg-line": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-coup-amg-line": { interestFree: [24], lowInterest: true },
+  "glb-250-4matic": { interestFree: [24], lowInterest: true },
+  "s-450-4matic-swb": { interestFree: [24], lowInterest: true },
+  // MY27 · 24개월 무이자 + 특별 할부
+  "e-200-exclusive-my27": { interestFree: [24], lowInterest: true },
+  "e-200-amg-line-my27": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-coup-avantgarde-my27": { interestFree: [24], lowInterest: true },
+  "glc-300-4matic-coup-amg-line-my27": { interestFree: [24], lowInterest: true },
+  // MY26 · 24/36개월 무이자 + 특별 할부
+  "mercedes-amg-glb-35-4matic": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-e-53-hybrid-4matic": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-s-63-e-performance": { interestFree: [24, 36], lowInterest: true },
+  "gle-350-4matic": { interestFree: [24, 36], lowInterest: true },
+  "gle-450-4matic": { interestFree: [24, 36], lowInterest: true },
+  "gle-450-4matic-amg-line": { interestFree: [24, 36], lowInterest: true },
+  "gle-450-4matic-coup-amg-line": { interestFree: [24, 36], lowInterest: true },
+  "gle-450-d-4matic-coup-amg-line": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-gle-53-4matic": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-gle-53-4matic-coup": { interestFree: [24, 36], lowInterest: true },
+  "gls-450-4matic-amg-line": { interestFree: [24, 36], lowInterest: true },
+  "gls-580-4matic-amg-line": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-maybach-gls-600": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-gls-63-4matic": { interestFree: [24, 36], lowInterest: true },
+  "mercedes-amg-g-63": { interestFree: [24, 36], lowInterest: true },
+  "eqe-350-suv": { interestFree: [24, 36], lowInterest: true },
+  "eqe-350": { interestFree: [24, 36], lowInterest: true },
+  "eqe-500-4matic-suv": { interestFree: [24, 36], lowInterest: true },
+  "eqs-450-4matic-suv": { interestFree: [24, 36], lowInterest: true },
+  "eqs-580-4matic-suv": { interestFree: [24, 36], lowInterest: true },
+  // MY27 · 24/36개월 무이자 + 특별 할부
+  "mercedes-amg-g-63-my27": { interestFree: [24, 36], lowInterest: true }
+};
+
+/* =====================================================
    ★★★★★ 2026년 11월 모델별 금융 조건 (벤츠파이낸셜 공식 자료) ★★★★★
    mbf = MBF 특별할인 / jc = MBM JC(특별 금리) / free = 무이자 할부
    inst = 일반 할부, sure = 안심보장할부 (60개월·선수금 30%, "일반 / 리텐션")
@@ -4251,6 +4306,40 @@ const FINANCE_CONDITIONS = [
   { my: "MY26", model: "G 580 with EQ Technology", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "-" },
   { my: "MY26", model: "Mercedes-Maybach EQS 680 SUV", mbf: "-", jc: "-", free: "-", inst: "7.63% / 7.23%", sure: "7.20% / 6.80%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" }
 ];
+
+// 모델명 바로 오른쪽에 금융혜택 뱃지 삽입 (메인 가격표 + 차종별 탭 동일 data-model-id 모두)
+function applyFinanceBadges() {
+  Object.keys(FINANCE_BADGES).forEach(function (id) {
+    var b = FINANCE_BADGES[id];
+    var terms = (b && Array.isArray(b.interestFree)) ? b.interestFree : [];
+    if (!terms.length && !(b && b.lowInterest)) return;
+    document.querySelectorAll('tr[data-model-id="' + id + '"]').forEach(function (tr) {
+      var cell = tr.children[0];
+      if (!cell || cell.querySelector('.fin-badges')) return; // 중복 삽입 방지
+      var wrap = document.createElement('span');
+      wrap.className = 'fin-badges';
+      if (terms.length) {
+        var free = document.createElement('span');
+        free.className = 'fin-badge fin-badge-free';
+        free.textContent = terms.join('/') + ' 무이자';
+        wrap.appendChild(free);
+      }
+      if (b.lowInterest) {
+        var low = document.createElement('span');
+        low.className = 'fin-badge fin-badge-low';
+        low.textContent = '저금리';
+        wrap.appendChild(low);
+      }
+      // 모델명 첫 텍스트 바로 뒤(줄바꿈·부가표기·상세보기보다 앞)에 둔다.
+      var first = null;
+      for (var i = 0; i < cell.childNodes.length; i++) {
+        if (cell.childNodes[i].nodeType === 3 && cell.childNodes[i].textContent.trim()) { first = cell.childNodes[i]; break; }
+      }
+      if (first) first.parentNode.insertBefore(wrap, first.nextSibling);
+      else cell.appendChild(wrap);
+    });
+  });
+}
 
 // 모델별 금융 조건표를 [data-finance-table]에 채운다 (BEST 탭 + 금융 탭)
 function renderFinanceConditions() {
@@ -5026,6 +5115,7 @@ document.addEventListener('DOMContentLoaded', function() {
   applyVehicleData();
   applyMBSureSupportBenefits();
   renderFinanceConditions();
+  applyFinanceBadges();
 
   applyEditionDetailLinks();
   applyRetentionBodycareBenefits();
