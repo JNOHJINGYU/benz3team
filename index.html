@@ -769,6 +769,7 @@ body {
 .fin-badge-low { background: #e5f5ea; color: #1e7a3e; }
 .fin-badge-conquest { background: #efe8fb; color: #5b2a9e; }
 .fin-badge-retention { background: #fff3d6; color: #946200; font-size: 10px; font-weight: 700; }
+.fin-badge-retention-plus { background: #fff3d6; color: #946200; font-size: 10px; font-weight: 700; }
 /* Conquest 적용 브랜드 안내 (장기렌트 안내 바로 아래) */
 /* 장기렌트 안내(.rent-note)와 같은 글씨체·크기·색상 */
 .conquest-note { margin: -28px 0 34px; font-size: 13px; color: #111; line-height: 1.6; text-align: left; }
@@ -2896,6 +2897,7 @@ body {
     </table></div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
   <div class="conquest-note">※ Conquest 적용 브랜드: Rolls-Royce, Bentley, BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus<span class="conquest-note-sub">※ MY27 S클래스 Conquest 혜택은 현금할인이 아닌 보증 연장(EW +1년 / +3만 km)입니다.</span></div>
+  <div class="conquest-note retention-plus-note">※ 재구매+ 혜택 : 2번째 재구매 시 1년 / 30,000km 보증연장, 3번째 재구매 시 2년 / 70,000km 보증연장</div>
     <div class="retention-bodycare-benefit maybach-retention-benefit" data-retention-target="maybachSClass">
       <div class="retention-bodycare-main">
         <span class="retention-bodycare-icon">🛡</span>
@@ -3326,6 +3328,7 @@ body {
   </div>
   <div class="rent-note">※ 장기렌트 이용 시 전 모델 +3% 추가 할인이 적용됩니다. Fleet 할인은 별도 조건으로, 장기렌트 추가 현금할인과 중복 여부는 별도로 확인해야 합니다.</div>
   <div class="conquest-note">※ Conquest 적용 브랜드: Rolls-Royce, Bentley, BMW(Mini 제외), Audi, Genesis, Volvo, Porsche, Land Rover, Lexus</div>
+  <div class="conquest-note retention-plus-note">※ 재구매+ 혜택 : 2번째 재구매 시 1년 / 30,000km 보증연장, 3번째 재구매 시 2년 / 70,000km 보증연장</div>
 </div>
 
 </div>
@@ -4315,6 +4318,23 @@ const RETENTION_BADGES = {
 };
 
 /* =====================================================
+   ★★★★★ 재구매+ (Retention+) 뱃지 — MY27 S-Class (Maybach 포함) ★★★★★
+   현재 E클래스 이상 보유 고객의 재구매 횟수별 보증연장 혜택(할인율 아님).
+   표시 전용 — 할인율·실구매가 계산에 사용하지 않습니다.
+   ===================================================== */
+const RETENTION_PLUS_BADGES = {
+  "s-350-d-4matic-my27": { label: "재구매+" },
+  "s-450-4matic-my27": { label: "재구매+" },
+  "s-450-4matic-long-exclusive-my27": { label: "재구매+" },
+  "s-450-4matic-long-amg-line-my27": { label: "재구매+" },
+  "s-500-4matic-long-my27": { label: "재구매+" },
+  "s-580-4matic-long-my27": { label: "재구매+" },
+  "mercedes-maybach-s-580-my27": { label: "재구매+" },
+  "mercedes-maybach-s-580-manufaktur-my27": { label: "재구매+" },
+  "mercedes-maybach-s-680-my27": { label: "재구매+" }
+};
+
+/* =====================================================
    ★★★★★ 2026년 11월 모델별 금융 조건 (벤츠파이낸셜 공식 자료) ★★★★★
    mbf = MBF 특별할인 / jc = MBM JC(특별 금리) / free = 무이자 할부
    inst = 일반 할부, sure = 안심보장할부 (60개월·선수금 30%, "일반 / 리텐션")
@@ -4383,14 +4403,16 @@ const FINANCE_CONDITIONS = [
 function applyFinanceBadges() {
   var conquest = (typeof CONQUEST_BADGES !== 'undefined') ? CONQUEST_BADGES : {};
   var retention = (typeof RETENTION_BADGES !== 'undefined') ? RETENTION_BADGES : {};
+  var retentionPlus = (typeof RETENTION_PLUS_BADGES !== 'undefined') ? RETENTION_PLUS_BADGES : {};
   var ids = Object.keys(FINANCE_BADGES);
-  Object.keys(conquest).concat(Object.keys(retention)).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
+  Object.keys(conquest).concat(Object.keys(retention), Object.keys(retentionPlus)).forEach(function (id) { if (ids.indexOf(id) === -1) ids.push(id); });
   ids.forEach(function (id) {
     var b = FINANCE_BADGES[id] || {};
     var c = conquest[id];
     var rt = retention[id];
+    var rp = retentionPlus[id];
     var terms = Array.isArray(b.interestFree) ? b.interestFree : [];
-    if (!terms.length && !b.lowInterest && !(c && c.label) && !(rt && rt.label)) return;
+    if (!terms.length && !b.lowInterest && !(c && c.label) && !(rt && rt.label) && !(rp && rp.label)) return;
     document.querySelectorAll('tr[data-model-id="' + id + '"]').forEach(function (tr) {
       var cell = tr.children[0];
       if (!cell || cell.querySelector('.fin-badges')) return; // 중복 삽입 방지
@@ -4421,6 +4443,13 @@ function applyFinanceBadges() {
         re.textContent = rt.label;
         re.title = '벤츠 재구매 고객 혜택 (Conquest와 택 1)';
         wrap.appendChild(re);
+      }
+      if (rp && rp.label) {
+        var rpl = document.createElement('span');
+        rpl.className = 'fin-badge fin-badge-retention-plus';
+        rpl.textContent = rp.label;
+        rpl.title = '재구매+ : 재구매 횟수별 보증연장 혜택';
+        wrap.appendChild(rpl);
       }
       // 모델명 첫 텍스트 바로 뒤(줄바꿈·부가표기·상세보기보다 앞)에 둔다.
       var first = null;
