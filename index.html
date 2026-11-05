@@ -2140,6 +2140,7 @@ body {
 .cle-detail-btn,
 .cla-detail-btn,
 .glc-electric-detail-btn,
+.glb-electric-detail-btn,
 .maybach-detail-btn {
   display: inline-flex;
   align-items: center;
@@ -2169,6 +2170,7 @@ body {
 .cle-detail-btn:hover,
 .cla-detail-btn:hover,
 .glc-electric-detail-btn:hover,
+.glb-electric-detail-btn:hover,
 .maybach-detail-btn:hover {
   background: linear-gradient(135deg, #23406F, #3E6EA8);
   border-color: #23406F;
@@ -2182,6 +2184,7 @@ body {
 .cle-detail-btn:hover .eclass-btn-arrow,
 .cla-detail-btn:hover .eclass-btn-arrow,
 .glc-electric-detail-btn:hover .eclass-btn-arrow,
+.glb-electric-detail-btn:hover .eclass-btn-arrow,
 .maybach-detail-btn:hover .eclass-btn-arrow {
   transform: translateX(4px);
 }
@@ -2191,6 +2194,7 @@ body {
 .cle-detail-btn:hover .eclass-btn-icon,
 .cla-detail-btn:hover .eclass-btn-icon,
 .glc-electric-detail-btn:hover .eclass-btn-icon,
+.glb-electric-detail-btn:hover .eclass-btn-icon,
 .maybach-detail-btn:hover .eclass-btn-icon {
   opacity: 1;
 }
@@ -2225,6 +2229,7 @@ body {
   .cle-detail-btn,
   .cla-detail-btn,
   .glc-electric-detail-btn,
+  .glb-electric-detail-btn,
   .maybach-detail-btn {
     height: 40px;
     padding: 0 16px;
@@ -2258,6 +2263,7 @@ body {
   .cle-detail-btn,
   .cla-detail-btn,
   .glc-electric-detail-btn,
+  .glb-electric-detail-btn,
   .maybach-detail-btn {
     height: 42px;
     padding: 0 18px;
@@ -2718,10 +2724,29 @@ body {
   <!-- GLA · GLB MY27 -->
   <div class="car-section" data-benefit-target="gla-glb-my27">
     <div class="car-section-header">
-      <div class="car-badge">GLA</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      <div class="glc-header-wrap">
+        <!-- 왼쪽: 배지 + 타이틀 -->
+        <div class="glc-title-group">
+          <div class="car-badge">GLA</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+          </div>
+        </div>
+        <!-- 오른쪽: CTA 버튼 + 안내문 (링크는 JS의 GLB_ELECTRIC_LANDING_URL로 주입) -->
+        <div class="glc-cta-group">
+          <a href="#" class="glb-electric-detail-btn" target="_blank" rel="noopener noreferrer">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            GLB 일렉트릭 상세보기
+            <span class="eclass-btn-arrow">↗</span>
+          </a>
+          <span class="eclass-cta-hint">신형 GLB 250+ electric의 주요 특징과 상세 정보를 확인해보세요.</span>
+        </div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="width:100%;">
@@ -3480,10 +3505,29 @@ body {
 
   <div class="car-section">
     <div class="car-section-header">
-      <div class="car-badge">GLA</div>
-      <div class="car-section-info">
-        <div class="car-brand">Mercedes-Benz</div>
-        <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+      <div class="glc-header-wrap">
+        <!-- 왼쪽: 배지 + 타이틀 -->
+        <div class="glc-title-group">
+          <div class="car-badge">GLA</div>
+          <div class="car-section-info">
+            <div class="car-brand">Mercedes-Benz</div>
+            <div class="car-model-name">GLA · GLB <span style="font-size:14px; font-weight:400; color:#7ab3d4; margin-left:8px;">MY27</span></div>
+          </div>
+        </div>
+        <!-- 오른쪽: CTA 버튼 + 안내문 (링크는 JS의 GLB_ELECTRIC_LANDING_URL로 주입) -->
+        <div class="glc-cta-group">
+          <a href="#" class="glb-electric-detail-btn" target="_blank" rel="noopener noreferrer">
+            <svg class="eclass-btn-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 9.5h1M18 9.5h1M2.5 9.5H17.5M5 9.5L7 4.5h6l2 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <ellipse cx="5.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <ellipse cx="14.5" cy="10.5" rx="1.5" ry="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M7 4.5H5.5L3 7.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            GLB 일렉트릭 상세보기
+            <span class="eclass-btn-arrow">↗</span>
+          </a>
+          <span class="eclass-cta-hint">신형 GLB 250+ electric의 주요 특징과 상세 정보를 확인해보세요.</span>
+        </div>
       </div>
     </div>
     <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="price-table" style="width:100%;">
@@ -5102,6 +5146,9 @@ var CLE_LANDING_URL = 'cle.html';
 // ★ CLA 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var CLA_LANDING_URL = 'cla.html';
 
+// ★ GLB 250+ electric(MY27) 랜딩페이지 URL – 주소가 바뀌면 이 값만 수정하세요.
+var GLB_ELECTRIC_LANDING_URL = 'https://jnohjingyu.github.io/GLB_EQ/';
+
 // ★ 마이바흐 랜딩페이지 URL – 변경 시 이 값만 수정하세요
 var MAYBACH_LANDING_URL = 'maybach.html';
 // 실제 배포 후 GitHub Pages URL 예시:
@@ -5123,6 +5170,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   document.querySelectorAll('.cla-detail-btn').forEach(function(btn) {
     btn.setAttribute('href', CLA_LANDING_URL);
+  });
+  document.querySelectorAll('.glb-electric-detail-btn').forEach(function(btn) {
+    btn.setAttribute('href', GLB_ELECTRIC_LANDING_URL);
+    btn.setAttribute('target', '_blank');
+    btn.setAttribute('rel', 'noopener noreferrer');
   });
   document.querySelectorAll('.maybach-detail-btn').forEach(function(btn) {
     btn.setAttribute('href', MAYBACH_LANDING_URL);
