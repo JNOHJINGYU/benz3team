@@ -777,6 +777,32 @@ button.fin-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit
 .fin-badge-tap[aria-expanded="true"] { box-shadow: inset 0 0 0 1px currentColor; }
 .fin-badge-detail { display: block; margin-top: 6px; padding: 7px 9px; border-radius: 6px; background: #f5f7fa; color: #333; font-size: 11px; font-weight: 500; line-height: 1.5; white-space: normal; word-break: keep-all; }
 .fin-badge-detail[hidden] { display: none; }
+/* 2026년 11월 특별 재고(위탁·전시) · MY27 S-Class 재구매 특별 뱃지 — 기존 .fin-badge 크기·간격 재사용 */
+.fin-badge-stock { background: #e3eefb; color: #1a4a8a; }
+.fin-badge-sclass { background: #ececf1; color: #3b3f58; }
+.fin-badge-sclass.sp-badge-voucher { background: #f1efe9; color: #5e5440; }
+button.sp-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit-appearance: none; appearance: none; touch-action: manipulation; }
+.sp-badge-tap::after { content: " ⓘ"; font-weight: 600; }
+.sp-badge-tap[aria-expanded="true"] { box-shadow: inset 0 0 0 1px currentColor; }
+.sp-badge-tap:focus-visible { outline: 2px solid #1a4a8a; outline-offset: 1px; }
+.price-table tbody tr.sp-detail-row, .price-table tbody tr.sp-detail-row:hover { background: #f7f9fc; }
+.price-table tbody tr.sp-detail-row > td { padding: 0; text-align: left; white-space: normal; }
+.sp-detail-row[hidden] { display: none; }
+.sp-detail { position: sticky; left: 0; box-sizing: border-box; padding: 12px 14px 14px; border-left: 3px solid #1a4a8a; font-size: 12px; color: #333; line-height: 1.55; word-break: keep-all; overflow-wrap: anywhere; text-align: left; }
+.sp-detail.sp-detail-sclass { border-left-color: #3b3f58; }
+.sp-detail-title { font-size: 13px; font-weight: 700; color: #111; margin: 0 0 8px; }
+.sp-detail-list { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; margin: 0 0 8px; }
+.sp-detail-list dt { color: #666; font-weight: 600; }
+.sp-detail-list dd { margin: 0; color: #111; }
+.sp-detail-list dd strong { color: #1a4a8a; }
+.sp-detail-notes { margin: 0; padding-left: 16px; color: #555; font-size: 11.5px; }
+.sp-detail-notes li + li { margin-top: 2px; }
+@media (max-width: 768px) {
+  .price-table .fin-badges .sp-badge-tap { padding: 5px 6px; margin: 1px 0; }
+  .sp-detail { padding: 10px 10px 12px; font-size: 11.5px; }
+  .sp-detail-list { grid-template-columns: 1fr; gap: 1px; }
+  .sp-detail-list dd { margin-bottom: 5px; }
+}
 .conquest-note.v-promo-note { margin: 12px 0 0; }
 /* Conquest 적용 브랜드 안내 (장기렌트 안내 바로 아래) */
 /* 장기렌트 안내(.rent-note)와 같은 글씨체·크기·색상 */
@@ -2489,6 +2515,16 @@ button.fin-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit
   <div class="discount-row">
     <div class="discount-tag">전시차량</div>
     <div class="discount-desc">전시차 즉시 출고 가능 시 — <span class="highlight">+1%</span> 추가 할인</div>
+  </div>
+  <!-- 2026년 11월 특별 위탁·전시차량 할인 프로그램: 지정 재고 한정. 가격표 실구매가 계산 미반영(SPECIAL_STOCK_PROMOTIONS 참고). -->
+  <div class="discount-row">
+    <div class="discount-tag">위탁·전시 특별</div>
+    <div class="discount-desc"><strong>전시차 및 위탁차량 특별 혜택</strong><br>모델과 재고 유형에 따라 추가 할인이 적용될 수 있습니다. 대상 모델의 뱃지를 클릭하여 할인율과 적용 조건을 확인하세요.<br>MY27 E 300 4MATIC (EXCLUSIVE · AMG Line) 위탁·전시 재고 <span class="highlight">+2%p</span> · MY27 GLC 300 4MATIC (SUV · 쿠페) 위탁·전시 재고 <span class="highlight">+4%p</span><span class="rule-note">※ 위 '전시차량 +1%'는 일반 전시차 조건이며, 위탁·전시 특별 할인은 지정 모델의 대상 위탁·전시 재고에 한정됩니다. 전시차 특별 할인(+1%p)은 차량별 해당 여부를 별도 확인 · 가격표 실구매가에는 미반영</span></div>
+  </div>
+  <!-- 2026년 11월 신규: The New S-Class 특별 재구매 프로그램 (MY27 S-Class · Maybach S). 표시 전용. -->
+  <div class="discount-row">
+    <div class="discount-tag">S-Class 재구매</div>
+    <div class="discount-desc"><strong>MY27 S-Class (Mercedes-Maybach 포함) 특별 재구매</strong><br>S-Class 보유 고객 재구매 시 위탁·전시 재고 한정 — 취득세 지원 <span class="highlight">+4%</span> · Trade-in 추가 <span class="highlight">+3%</span> · 주유 바우처 <span class="highlight highlight-blue">50만원</span><span class="rule-note">※ 특별 Trade-in 추가 할인은 기존 Trade-in 할인과 중복 불가 · 재구매 특별 할인은 Conquest와 중복 불가 · 주유 바우처는 현금 할인과 별도</span></div>
   </div>
   <div class="discount-row">
     <div class="discount-tag" style="white-space:normal; word-break:keep-all; line-height:1.5; min-width:76px; max-width:88px; font-size:13px; padding:6px 8px;">하자수리·<br>하이마일리지</div>
@@ -4461,6 +4497,143 @@ const CUSTOM_BADGE_SETS = {
 
 
 /* =====================================================
+   ★★★★★ 2026년 11월 특별 재고(위탁·전시) · MY27 S-Class 재구매 특별 프로그램 ★★★★★
+   - programs : 프로그램(뱃지)별 할인 구성·조건·주의사항
+   - models   : 모델 식별자(data-model-id) → 연식 + 적용 프로그램 목록
+   표시 전용 — SALES_CONDITIONS·VEHICLE_DATA와 분리되어 있으며
+   기본 할인·금융 할인·장기렌트·실구매가 계산에 절대 합산하지 않습니다.
+   매월 프로모션 변경 시 이 객체만 수정하면 됩니다.
+   ===================================================== */
+const SPECIAL_STOCK_PROMOTIONS = {
+  programs: {
+    // MY27 E 300 4MATIC — 특별 위탁·전시차량 할인 (8% + 위탁·전시 2%p + 해당 시 전시차 특별 1%p + MBF 4%p = 최대 15%)
+    "stock-e300-my27": {
+      type: "stock", cls: "fin-badge-stock",
+      programName: "특별 위탁·전시차량 할인 프로그램 — MY27 E 300 4MATIC",
+      badge: "위탁·전시 +3%p",
+      basic: 8, stockExtra: 2, displaySpecial: 1, finance: 4, max: 15,
+      financeLabel: "벤츠파이낸셜 추가 할인",
+      conditions: [
+        "지정 위탁·전시 재고에 한정 — STS ‘위탁·전시 추가 현금할인’ 프로그램 선택 후 적용",
+        "프로모션 기간 내 STS 상 Sales Card Capture 완료 차량에 한하여 적용",
+        "데모·매니지먼트·커티시 차량 제외 · 현재 시행 중인 리테일 프로모션과 중복 가능",
+        "KB·하나캐피탈 특별 고잔가 프로그램 이용 시 STS ‘위탁·전시 [KB/Hana] 현금 할인’으로 별도 적용"
+      ],
+      cautions: [
+        "위탁·전시차 추가 할인(+2%p)과 전시차 특별 할인(+1%p)은 적용 조건이 각각 다르며, 모든 위탁·전시 차량에 자동 적용되지 않습니다",
+        "벤츠파이낸셜 추가 할인(+4%p)은 벤츠파이낸셜 이용 시에만 적용됩니다",
+        "최대 15%는 모든 해당 조건 충족 시의 참고 수치이며 가격표 실구매가에는 반영하지 않았습니다",
+        "실제 차량 재고 및 할인 적용 여부는 별도 확인이 필요합니다"
+      ]
+    },
+    // MY27 GLC 300 4MATIC SUV·Coupé — 특별 위탁·전시차량 할인 (7% + 위탁·전시 4%p + 해당 시 전시차 특별 1%p + MBF 1%p = 최대 13%)
+    "stock-glc-my27": {
+      type: "stock", cls: "fin-badge-stock",
+      programName: "특별 위탁·전시차량 할인 프로그램 — MY27 GLC 300 4MATIC (SUV · 쿠페)",
+      badge: "위탁·전시 +5%p",
+      basic: 7, stockExtra: 4, displaySpecial: 1, finance: 1, max: 13,
+      financeLabel: "벤츠파이낸셜 추가 할인",
+      conditions: [
+        "지정 위탁·전시 재고에 한정 — 위탁·전시 조건 충족 시 현금할인 7% → 11% (위탁·전시 +4%p)",
+        "전시차 특별 할인(+1%p)은 해당 차량의 적용 자격을 확인한 경우에만 추가",
+        "프로모션 기간 내 STS 상 Sales Card Capture 완료 차량에 한하여 적용",
+        "데모·매니지먼트·커티시 차량 제외 · 현재 시행 중인 리테일 프로모션과 중복 가능",
+        "KB·하나캐피탈 특별 고잔가 프로그램 이용 시 STS ‘위탁·전시 [KB/Hana] 현금 할인’으로 별도 적용"
+      ],
+      cautions: [
+        "위탁·전시차 추가 할인(+4%p)과 전시차 특별 할인(+1%p)은 별개 조건이며, 모든 위탁·전시 차량에 자동 적용되지 않습니다",
+        "벤츠파이낸셜 추가 할인(+1%p)은 벤츠파이낸셜 이용 시에만 적용됩니다",
+        "최대 13%는 모든 해당 조건 충족 시의 참고 수치이며 가격표 실구매가에는 반영하지 않았습니다",
+        "실제 재고와 할인 적용 여부는 별도 확인이 필요합니다"
+      ]
+    },
+    // The New S-Class 특별 재구매 프로그램 (MY27 S-Class · Maybach S)
+    "sclass-acq-tax-my27": {
+      type: "info", cls: "fin-badge-sclass",
+      programName: "The New S-Class 특별 재구매 — 재구매 취득세 지원 추가 현금할인",
+      badge: "재구매 취득세 +4%",
+      rows: [
+        ["대상 고객", "현재 S-Class(전 연식, Mercedes-Maybach 포함) 보유 고객의 재구매"],
+        ["대상 차량", "MY27 S-Class 신차 (Mercedes-Maybach 포함) — <strong>위탁·전시 재고 한정</strong>"],
+        ["혜택", "추가 현금 할인 <strong>4%</strong>"],
+        ["중복 조건", "Conquest 프로그램과 중복 불가 · 그 외 리테일 프로모션(재구매+ 포함)과 중복 가능"]
+      ],
+      cautions: [
+        "신차 구매 기준월 기준 과거 3개월 이내 기존 차량 보유 이력 확인(월 단위) — 장기렌터카·리스·중고차 포함, 단기렌터카 불가",
+        "제출 서류: 기존 차량 등록원부 또는 보험가입사실증명서 (렌탈·리스 시 계약서, 명의 범위 활용 시 가족관계증명서)",
+        "STS ‘위탁/전시 재구매 취득세 지원 할인’ 선택 후 Sales Card Capture된 건만 적용 · 데모/매니지먼트/커티시 차량 제외",
+        "가격표 실구매가에는 반영하지 않았습니다"
+      ]
+    },
+    "sclass-tradein-my27": {
+      type: "info", cls: "fin-badge-sclass",
+      programName: "The New S-Class 특별 재구매 — 재구매 Trade-in 추가 현금할인",
+      badge: "Trade-in +3%",
+      rows: [
+        ["대상 고객", "재구매 대상 고객이 기존 차량을 Trade-in 하는 경우"],
+        ["대상 차량", "MY27 S-Class 신차 (Mercedes-Maybach 포함) — <strong>위탁·전시 재고 한정</strong>"],
+        ["혜택", "추가 현금 할인 <strong>3%</strong>"],
+        ["중복 조건", "기존 Trade-in 할인(+1%)과 중복 불가 · Conquest(+2%)와 중복 불가 — 합산하지 않습니다"]
+      ],
+      cautions: [
+        "Trade-in operation 및 조건은 기존 Trade-in과 동일",
+        "STS ‘위탁/전시 Trade-in 추가 할인’ 선택 후 Sales Card Capture된 건만 적용",
+        "가격표 실구매가에는 반영하지 않았습니다"
+      ]
+    },
+    "sclass-conquest-my27": {
+      type: "info", cls: "fin-badge-sclass",
+      programName: "MY27 S-Class 프리미엄 브랜드 특별 할인 (Conquest) — 위탁·전시 재고",
+      badge: "Conquest +2%",
+      rows: [
+        ["대상 고객", "Rolls-Royce · Bentley · BMW(Mini 제외) · Audi · Genesis · Volvo · Porsche · Land Rover · Lexus 보유 고객"],
+        ["대상 차량", "MY27 S-Class (Mercedes-Maybach 포함) — <strong>위탁·전시 재고 한정</strong>"],
+        ["혜택", "추가 현금 할인 <strong>2%</strong>"],
+        ["중복 조건", "재구매 프로그램(Cash Retention · Trade-in · 재구매 취득세 지원 등)과 중복 불가 — Trade-in +3%와 합산하지 않습니다"]
+      ],
+      cautions: [
+        "기존 MY27 S-Class Conquest 보증연장(EW +1년 / +3만km, ‘EW Conquest’ 뱃지)과는 별개 혜택 — 현금 할인과 보증연장을 구분하여 안내",
+        "보증연장은 STS ‘[MY27 S클래스] 프리미엄 브랜드 특별 혜택 프로그램’ 선택 건에 한해 제공",
+        "기존 차량은 신차 구매 월 1일까지 보유 필수 · 등록원부 또는 보험사실확인서 제출",
+        "가격표 실구매가에는 반영하지 않았습니다"
+      ]
+    },
+    "sclass-voucher-my27": {
+      type: "info", cls: "fin-badge-sclass sp-badge-voucher",
+      programName: "The New S-Class 특별 재구매 — 주유 바우처",
+      badge: "주유 바우처 50만원",
+      rows: [
+        ["대상 고객", "S-Class 특별 재구매 프로그램 자격 충족 고객"],
+        ["대상 차량", "MY27 S-Class 전체 (Mercedes-Maybach 포함, 위탁·전시 여부 무관)"],
+        ["혜택", "대당 <strong>500,000원</strong> 주유 바우처 — 현금 할인과 별도이며 할인율에 합산하지 않습니다"]
+      ],
+      cautions: [
+        "STS ‘50만원 재구매 주유비 바우처’ 선택 후 Sales Card Capture된 건만 지급",
+        "출고 후 익월 중순 지원금 지급 → 판매사가 바우처 구매 후 고객에게 전달 (일정 변동 가능)"
+      ]
+    }
+  },
+  models: {
+    "e-300-4matic-exclusive-my27": { year: "MY27", programs: ["stock-e300-my27"] },
+    "e-300-4matic-amg-line-my27": { year: "MY27", programs: ["stock-e300-my27"] },
+    "glc-300-4matic-my27": { year: "MY27", programs: ["stock-glc-my27"] },
+    "glc-300-4matic-avantgarde-my27": { year: "MY27", programs: ["stock-glc-my27"] },
+    "glc-300-4matic-amg-line-my27": { year: "MY27", programs: ["stock-glc-my27"] },
+    "glc-300-4matic-coup-avantgarde-my27": { year: "MY27", programs: ["stock-glc-my27"] },
+    "glc-300-4matic-coup-amg-line-my27": { year: "MY27", programs: ["stock-glc-my27"] },
+    "s-350-d-4matic-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "s-450-4matic-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "s-450-4matic-long-exclusive-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "s-450-4matic-long-amg-line-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "s-500-4matic-long-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "s-580-4matic-long-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "mercedes-maybach-s-580-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "mercedes-maybach-s-580-manufaktur-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] },
+    "mercedes-maybach-s-680-my27": { year: "MY27", programs: ["sclass-acq-tax-my27", "sclass-tradein-my27", "sclass-conquest-my27", "sclass-voucher-my27"] }
+  }
+};
+
+/* =====================================================
    ★★★★★ 2026년 11월 모델별 금융 조건 (벤츠파이낸셜 공식 자료) ★★★★★
    mbf = MBF 특별할인 / jc = MBM JC(특별 금리) / free = 무이자 할부
    inst = 일반 할부, sure = 안심보장할부 (60개월·선수금 30%, "일반 / 리텐션")
@@ -4635,6 +4808,146 @@ document.addEventListener('click', function (e) {
   cell.querySelectorAll('.fin-badge-detail').forEach(function (d) { d.hidden = true; });
   cell.querySelectorAll('.fin-badge-tap').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
   if (willOpen) { target.hidden = false; btn.setAttribute('aria-expanded', 'true'); }
+});
+
+// ── 특별 재고(위탁·전시) · S-Class 재구매 뱃지 ──
+// applyFinanceBadges() 이후 실행: 기존 .fin-badges 영역에 이어 붙이고, 상세 조건은 해당 행 바로 아래 행으로 펼친다.
+// 표시 전용 — 실구매가·할인율 셀은 건드리지 않는다.
+var spDetailSeq = 0;
+function spEscape(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function buildSpecialDetailHTML(p) {
+  var rows = [];
+  rows.push(['프로그램', spEscape(p.programName)]);
+  if (p.type === 'stock') {
+    rows.push(['기본 할인', '현금 할인 <strong>' + p.basic + '%</strong>']);
+    rows.push(['특별 재고 추가 할인', '위탁·전시차 추가 <strong>+' + p.stockExtra + '%p</strong> (대상 재고 한정)<br>해당 시 전시차 특별 할인 <strong>+' + p.displaySpecial + '%p</strong> (차량별 자격 확인)']);
+    rows.push(['해당 시 금융 할인', spEscape(p.financeLabel) + ' <strong>+' + p.finance + '%p</strong>']);
+    rows.push(['최대 할인율', '모든 해당 조건 충족 시 최대 <strong>' + p.max + '%</strong> <span style="color:#777;">(' + p.basic + ' + ' + p.stockExtra + ' + ' + p.displaySpecial + ' + ' + p.finance + ', 참고 수치)</span>']);
+  } else {
+    (p.rows || []).forEach(function (r) { rows.push([r[0], r[1]]); });
+  }
+  var html = '<div class="sp-detail' + (p.type === 'stock' ? '' : ' sp-detail-sclass') + '" role="region" aria-label="' + spEscape(p.programName) + '">';
+  html += '<p class="sp-detail-title">' + spEscape(p.badge) + ' 상세 조건</p><dl class="sp-detail-list">';
+  rows.forEach(function (r) { html += '<dt>' + r[0] + '</dt><dd>' + r[1] + '</dd>'; });
+  html += '</dl>';
+  var notes = (p.conditions || []).concat(p.cautions || []);
+  if (notes.length) {
+    html += '<ul class="sp-detail-notes">';
+    notes.forEach(function (n) { html += '<li>' + spEscape(n) + '</li>'; });
+    html += '</ul>';
+  }
+  return html + '</div>';
+}
+function validateSpecialStockPromotions() {
+  var progs = SPECIAL_STOCK_PROMOTIONS.programs;
+  Object.keys(progs).forEach(function (pid) {
+    var p = progs[pid];
+    if (p.type !== 'stock') return;
+    var sum = p.basic + p.stockExtra + p.displaySpecial + p.finance;
+    if (sum !== p.max) console.warn('[특별 재고 할인] ' + pid + ' 최대 할인율 불일치: 구성 합계 ' + sum + '% ≠ max ' + p.max + '%');
+  });
+  Object.keys(SPECIAL_STOCK_PROMOTIONS.models).forEach(function (id) {
+    var m = SPECIAL_STOCK_PROMOTIONS.models[id];
+    if (!(id in VEHICLE_DATA)) console.warn('[특별 재고 할인] VEHICLE_DATA에 없는 모델 ID:', id);
+    m.programs.forEach(function (pid) { if (!progs[pid]) console.warn('[특별 재고 할인] 정의되지 않은 프로그램:', pid, '(' + id + ')'); });
+  });
+}
+function applySpecialStockBadges() {
+  var progs = SPECIAL_STOCK_PROMOTIONS.programs;
+  var models = SPECIAL_STOCK_PROMOTIONS.models;
+  Object.keys(models).forEach(function (id) {
+    var m = models[id];
+    document.querySelectorAll('tr[data-model-id="' + id + '"]').forEach(function (tr) {
+      // 연식 가드: MY27 전용 프로그램이 MY26 행에 붙지 않도록 행 연식을 확인
+      var rowYear = (tr.classList.contains('my27-row') || /-my27$/.test(id)) ? 'MY27' : 'MY26';
+      if (m.year && m.year !== rowYear) return;
+      var cell = tr.children[0];
+      if (!cell) return;
+      var wrap = cell.querySelector('.fin-badges');
+      if (!wrap) {
+        wrap = document.createElement('span');
+        wrap.className = 'fin-badges';
+        var first = null;
+        for (var i = 0; i < cell.childNodes.length; i++) {
+          if (cell.childNodes[i].nodeType === 3 && cell.childNodes[i].textContent.trim()) { first = cell.childNodes[i]; break; }
+        }
+        if (first) first.parentNode.insertBefore(wrap, first.nextSibling);
+        else cell.insertBefore(wrap, cell.firstChild);
+      }
+      var cols = 0;
+      Array.prototype.forEach.call(tr.children, function (c) { cols += c.colSpan || 1; });
+      var anchor = tr;
+      while (anchor.nextElementSibling && anchor.nextElementSibling.classList.contains('sp-detail-row')) anchor = anchor.nextElementSibling;
+      m.programs.forEach(function (pid) {
+        var p = progs[pid];
+        if (!p || wrap.querySelector('[data-sp-program="' + pid + '"]')) return; // 중복 생성 방지
+        var detailId = 'sp-detail-' + (++spDetailSeq);
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'fin-badge sp-badge-tap ' + p.cls;
+        btn.textContent = p.badge;
+        btn.setAttribute('data-sp-program', pid);
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-controls', detailId);
+        btn.title = p.programName + ' — 클릭하여 조건 보기';
+        wrap.appendChild(btn);
+        var row = document.createElement('tr');
+        row.className = 'sp-detail-row';
+        row.id = detailId;
+        row.hidden = true;
+        var td = document.createElement('td');
+        td.colSpan = cols;
+        td.innerHTML = buildSpecialDetailHTML(p);
+        row.appendChild(td);
+        anchor.parentNode.insertBefore(row, anchor.nextSibling);
+        anchor = row;
+      });
+    });
+  });
+}
+function closeSpecialDetails(tbody) {
+  tbody.querySelectorAll('tr.sp-detail-row').forEach(function (r) { r.hidden = true; });
+  tbody.querySelectorAll('.sp-badge-tap').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+}
+// 같은 표(tbody)에서는 상세 영역을 하나만 펼친다. 기존 조건부 뱃지를 열면 특별 상세는 닫는다.
+document.addEventListener('click', function (e) {
+  var btn = e.target.closest && e.target.closest('.sp-badge-tap, .fin-badge-tap');
+  if (!btn) return;
+  var tbody = btn.closest('tbody');
+  if (!tbody) return;
+  if (!btn.classList.contains('sp-badge-tap')) { closeSpecialDetails(tbody); return; }
+  e.preventDefault();
+  var row = document.getElementById(btn.getAttribute('aria-controls'));
+  if (!row) return;
+  var willOpen = row.hidden;
+  closeSpecialDetails(tbody);
+  var cell = btn.closest('td');
+  if (cell) {
+    cell.querySelectorAll('.fin-badge-detail').forEach(function (d) { d.hidden = true; });
+    cell.querySelectorAll('.fin-badge-tap').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  }
+  if (willOpen) {
+    row.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    // 모바일: 표가 가로 스크롤 영역보다 넓으면 상세 영역을 보이는 폭에 맞춰 잘림 방지
+    var box = row.querySelector('.sp-detail');
+    var scroller = row.closest('table') && row.closest('table').parentElement;
+    if (box && scroller) {
+      var visible = scroller.clientWidth;
+      box.style.maxWidth = (visible && visible < row.offsetWidth) ? visible + 'px' : '';
+    }
+  }
+});
+// Esc: 열린 특별 상세 닫고 뱃지로 포커스 복귀
+document.addEventListener('keydown', function (e) {
+  if (e.key !== 'Escape') return;
+  var open = document.querySelector('.sp-badge-tap[aria-expanded="true"]');
+  if (!open) return;
+  var tbody = open.closest('tbody');
+  if (tbody) closeSpecialDetails(tbody);
+  open.focus();
 });
 
 // 모델별 금융 조건표를 [data-finance-table]에 채운다 (BEST 탭 + 금융 탭)
@@ -5441,12 +5754,14 @@ document.addEventListener('DOMContentLoaded', function() {
   applyMBSureSupportBenefits();
   renderFinanceConditions();
   applyFinanceBadges();
+  applySpecialStockBadges();
 
   applyEditionDetailLinks();
   applyRetentionBodycareBenefits();
   applyMobilePriceFormat();
   validateSalesConditions();
   validateMBSureSupport();
+  validateSpecialStockPromotions();
 });
 window.addEventListener('resize', applyMobilePriceFormat);
 
