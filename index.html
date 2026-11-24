@@ -2479,7 +2479,7 @@ button.sp-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit-
       </div>
       <div class="spotlight-item">
         <div class="spotlight-item-name">24 · 36개월 무이자 할부</div>
-        <div class="spotlight-item-sub">C 200 · E 200 · E 300(MY26) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델<br>선수금 조건은 모델별 상이 — 선수금 조건 별도 확인</div>
+        <div class="spotlight-item-sub">C 200 · E 200 · E 300(MY26·MY27) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델<br>선수금 조건은 모델별 상이 — 선수금 조건 별도 확인</div>
       </div>
     </div>
   </div>
@@ -2561,7 +2561,7 @@ button.sp-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit-
       <div class="finance-hero-item finance-hero-item-new">
         <div class="finance-hero-tag">11월 신설</div>
         <div class="finance-hero-item-name">24 · 36개월 무이자 할부</div>
-        <div class="finance-hero-item-desc">C 200 · E 200 · E 300(MY26) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델 (선수금 조건 별도 확인)</div>
+        <div class="finance-hero-item-desc">C 200 · E 200 · E 300(MY26·MY27) · GLC 300 · GLE · GLS · AMG · EQE/EQS 등 지정 모델 (선수금 조건 별도 확인)</div>
       </div>
       <div class="finance-hero-item finance-hero-item-new">
         <div class="finance-hero-tag">11월 신설</div>
@@ -2602,7 +2602,7 @@ button.sp-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit-
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리 (MBM JC)</div>
-    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26) · AMG_E 53 · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
+    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26·MY27) · AMG_E 53 · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -3458,7 +3458,7 @@ button.sp-badge-tap { border: 0; font-family: inherit; cursor: pointer; -webkit-
 
   <div class="finance-card">
     <div class="finance-card-label">FOCUS · 특별 금리 (MBM JC)</div>
-    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26) · AMG_E 53 · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
+    <div class="finance-card-subject">대상 — C 200 · E 200 (MY26·MY27) · E 300 (MY26·MY27) · AMG_E 53 · AMG_S 63 · MY27 S-Class·Maybach S (재구매 운용리스) · GLC 300 AV·AMG Line (MY26) · GLC 300 쿠페 (MY27) · GLE 350 · GLE 450 (쿠페 포함) · GLE 450 d 쿠페 · AMG_GLE 53 (쿠페 포함) · GLS 450 · GLS 580 · Maybach GLS 600 · AMG_GLS 63 · AMG_G 63 · GLA 250 (MY27) · GLB 250 · AMG_GLB 35 · EQE · EQS</div>
     <div class="rate-grid">
       <div class="rate-cell">
         <div class="rate-period">24개월</div>
@@ -4465,6 +4465,20 @@ const RETENTION_PLUS_BADGES = {
 // 여기에 등록된 모델은 FINANCE/CONQUEST/RETENTION 기본 조합 대신 이 목록을 순서대로 표시한다.
 // 표시 전용 — 할인율·실구매가 계산에는 사용하지 않는다(금리·월 납입금 지원은 차량 할인과 별개).
 const CUSTOM_BADGE_SETS = {
+  // MY27 E 300 4MATIC EXCLUSIVE · AMG Line — 특별 저금리 프로모션 (2026.11.20~12.31, 공문 기준)
+  // 금리·무이자 선수금 비율은 공문 미기재 → 수치 입력하지 않음. 36개월 무이자 없음. 할부·리스는 택 1.
+  "e-300-4matic-exclusive-my27": [
+    { label: "저금리", cls: "fin-badge-low",
+      detail: "MY27 E 300 특별 저금리 프로모션 · 저금리 일반 할부 / 저금리 안심보장할부(MB-Sure) / 저금리 금융리스 / 저금리 운용리스 중 택 1 · 적용 기간 2026년 11월 20일~12월 31일. ※ 금융상품별 적용 금리 및 세부 조건은 별도 상담 바랍니다. 금리 혜택은 차량 할인율·실구매가에 더하지 않습니다." },
+    { label: "24 무이자", cls: "fin-badge-free",
+      detail: "24개월 무이자 할부 프로모션 · 할부 기간 24개월 · 적용 금리 0% · 최대 선수금 조건 충족 시 적용 · 적용 기간 2026년 11월 20일~12월 31일. ※ 선수금 비율 및 세부 금융 조건은 별도 상담 바랍니다." }
+  ],
+  "e-300-4matic-amg-line-my27": [
+    { label: "저금리", cls: "fin-badge-low",
+      detail: "MY27 E 300 특별 저금리 프로모션 · 저금리 일반 할부 / 저금리 안심보장할부(MB-Sure) / 저금리 금융리스 / 저금리 운용리스 중 택 1 · 적용 기간 2026년 11월 20일~12월 31일. ※ 금융상품별 적용 금리 및 세부 조건은 별도 상담 바랍니다. 금리 혜택은 차량 할인율·실구매가에 더하지 않습니다." },
+    { label: "24 무이자", cls: "fin-badge-free",
+      detail: "24개월 무이자 할부 프로모션 · 할부 기간 24개월 · 적용 금리 0% · 최대 선수금 조건 충족 시 적용 · 적용 기간 2026년 11월 20일~12월 31일. ※ 선수금 비율 및 세부 금융 조건은 별도 상담 바랍니다." }
+  ],
   // MY27 V 300 d 4MATIC EXCLUSIVE — 2026년 11월 (무이자 없음, Conquest 2%/3%는 택 1·중복 합산 불가)
   "v-300-d": [
     { label: "저금리", cls: "fin-badge-low",
@@ -4635,7 +4649,7 @@ const FINANCE_CONDITIONS = [
   { my: "MY26", model: "E 300 4MATIC AMG Line · EXCLUSIVE", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.33% / 4.93%", sure: "특별 5.72% / 5.32%", lease: "신차교환 + 타이어 3년", fleet: "-" },
   { my: "MY27", model: "E 200 EXCLUSIVE", mbf: "+4%", jc: "O", free: "24개월", inst: "특별 5.80% / 5.40%", sure: "특별 6.10% / 5.70%", lease: "특별 리스", fleet: "-" },
   { my: "MY27", model: "E 200 AMG Line", mbf: "+3%", jc: "O", free: "24개월", inst: "특별 5.82% / 5.42%", sure: "특별 6.11% / 5.71%", lease: "특별 리스", fleet: "-" },
-  { my: "MY27", model: "E 300 4MATIC AMG Line · EXCLUSIVE", mbf: "+4%", jc: "-", free: "-", inst: "6.60% / 6.20%", sure: "6.41% / 6.01%", lease: "신차교환 + 타이어 3년", fleet: "-" },
+  { my: "MY27", model: "E 300 4MATIC AMG Line · EXCLUSIVE", mbf: "+4%", jc: "O", free: "24개월 (최대 선수금 조건)", inst: "특별 저금리 (금리 별도 확인)", sure: "특별 저금리 (금리 별도 확인)", lease: "특별 금융리스 · 운용리스 (11.20~12.31)", fleet: "-" },
   { my: "MY26", model: "E 350 e 4MATIC EXCLUSIVE", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
   { my: "MY26·MY27", model: "E 450 4MATIC AMG Line · EXCLUSIVE", mbf: "-", jc: "-", free: "-", inst: "7.43% / 7.03%", sure: "7.16% / 6.76%", lease: "신차교환 + 타이어 3년", fleet: "Fleet 할부 5.98% · 운용리스" },
   { my: "MY26", model: "Mercedes-AMG E 53 4MATIC+", mbf: "-", jc: "O", free: "24/36개월", inst: "특별 4.26% / 3.86%", sure: "특별 5.02% / 4.62%", lease: "특별 리스", fleet: "-" },
